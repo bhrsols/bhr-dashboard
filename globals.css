@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+    html,
+    body {
+        @apply bg-lightbg text-secondary dark:bg-darkbg dark:text-primary font-primary transition duration-300;
+    }
     /* Typography */
     @font-face {
-        font-family: Cairo;
-        src: url(/static/fonts/cairo/Cairo-Regular.ttf) format('truetype');
-        font-weight: normal;
-        font-style: normal;
+        font-family: Changa;
+        font-weight: 400;
+        src: url(/static/fonts/Changa-ExtraLight.ttf);
     }
-
     @font-face {
-        font-family: Cairo;
-        src: url(/static/fonts/cairo/Cairo-Bold.ttf) format('truetype');
-        font-weight: bold;
-        font-style: normal;
+        font-family: Changa;
+        font-weight: 500;
+        src: url(/static/fonts/Changa-Light.ttf);
     }
-
     @font-face {
-        font-family: Cairo;
-        src: url(/static/fonts/cairo/Cairo-Black.ttf) format('truetype');
-        font-weight: bolder;
-        font-style: italic;
+        font-family: Changa;
+        font-weight: 600;
+        src: url(/static/fonts/Changa-Regular.ttf);
+    }
+    @font-face {
+        font-family: Changa;
+        font-weight: 700;
+        src: url(/static/fonts/Changa-Medium.ttf);
+    }
+    @font-face {
+        font-family: Changa;
+        font-weight: 800;
+        src: url(/static/fonts/Changa-Bold.ttf);
+    }
+    @font-face {
+        font-family: Changa;
+        font-weight: 900;
+        src: url(/static/fonts/Changa-ExtraBold.ttf);
+    }
+}
+
+/* Gradient Spinner Styles */
+.gradient-spinner {
+    --border-width: 6px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+
+    --mask: radial-gradient(
+        farthest-side,
+        transparent calc(100% - var(--border-width) - 0.5px),
+        #000 calc(100% - var(--border-width) + 0.5px)
+    );
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+    background: linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+        linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 

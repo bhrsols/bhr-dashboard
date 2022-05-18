@@ -9,7 +9,7 @@ export function Sidebar() {
     return (
         <>
             <div className={`flex h-screen shadow-xl`}>
-                <aside className="z-20 w-72 overflow-y-auto bg-white shadow-md dark:bg-dark_accent hidden sm:block flex-shrink-0 relative">
+                <aside className="z-20 w-72 overflow-y-auto shadow-md hidden sm:block flex-shrink-0 relative">
                     <div className="h-24 mb-4 text-center flex justify-center items-center shadow-md dark:shadow-2xl">
                         <div className="flex items-center gap-8">
                             <h1 className="flex items-center justify-center select-none text-gray-800 dark:text-gray-50 dark:hover:text-gray-300 text-lg font-semibold">
@@ -57,7 +57,7 @@ export function Sidebar() {
             </div>
 
             <header
-                className={`fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 shadow-md overflow-y-auto bg-white dark:bg-dark_accent sm:hidden`}
+                className={`fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 shadow-md overflow-y-auto sm:hidden`}
             >
                 <div className="divide-y divide-gray-500 py-4 text-gray-500 dark:text-gray-400">
                     <a

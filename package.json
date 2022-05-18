@@ -2,11 +2,13 @@
     "name": "next-template",
     "version": "0.1.0",
     "private": true,
+    "author": "Bhr Engineering Team <info@bhr.sa>",
+    "homepage": "https://bhr-admin-dashboard.vercel.app",
+    "description": "General purpose responsive admin dashboard",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
+        "start": "next start"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.1",

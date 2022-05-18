@@ -3,7 +3,7 @@ export function ToggleSidebar() {
         <div>
             <img
                 alt="NTIS Logo"
-                src="/static/images/logo.png"
+                src="/static/logo.png"
                 width={96}
                 height={48}
                 className="hover:opacity-75"

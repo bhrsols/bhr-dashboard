@@ -1,21 +1,32 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from 'src/app'
-import { setMsg } from 'src/features/testSlice'
+import { Button } from 'src/components'
+import { AppLayout } from 'src/layout'
+import {
+    useAppDispatch,
+    useAppSelector,
+    switchTheme,
+    setLocale,
+} from 'src/state'
+import { LOCALE } from 'types'
 
 const Home: NextPage = () => {
     const dispatch = useAppDispatch()
-    const { msg } = useAppSelector(state => state.test)
-
-    useEffect(() => {
-        setTimeout(() => dispatch(setMsg('Not hello world!')), 3000)
-    })
+    const { t, locale } = useAppSelector(state => state.ui)
 
     return (
-        <div className="bg-black text-white">
-            <Link href="/">{msg}</Link>
-        </div>
+        <AppLayout>
+            <Link href="/">{t.APP_TITLE}</Link>
+            <Button text="Click" onClick={() => dispatch(switchTheme())} />
+            <Button
+                text="Click"
+                onClick={() =>
+                    dispatch(
+                        setLocale(locale === LOCALE.EN ? LOCALE.AR : LOCALE.EN)
+                    )
+                }
+            />
+        </AppLayout>
     )
 }
 

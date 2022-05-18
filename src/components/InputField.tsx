@@ -1,8 +1,8 @@
-import { IInputField } from 'types'
+import { InputFieldProps } from 'types'
 import { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
 
-export const InputField = (props: IInputField) => {
+export const InputField = (props: InputFieldProps) => {
     const [showField, setShowField] = useState(false)
 
     return (

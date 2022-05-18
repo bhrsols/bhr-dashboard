@@ -1,50 +1,27 @@
-import Head from 'next/head'
 import { ToastContainer } from 'react-toastify'
-import { useAppSelector } from 'src/app'
-import { LoginForm } from 'src/components'
+import {
+    useAppDispatch,
+    useAppSelector,
+    initApp,
+    setInitializing,
+} from 'src/state'
+import { LoginForm, AppInitializing } from 'src/components'
 import { AppBar } from './components/AppBar'
+import { useEffect } from 'react'
 
 export function AppLayout(props: any) {
+    const dispatch = useAppDispatch()
+    const { ui } = useAppSelector(state => state)
     const { children } = props
-    const { user } = useAppSelector(state => state.test)
+    const { appInitialized, initializing } = ui
+
+    useEffect(() => {
+        !appInitialized && dispatch(initApp())
+        initializing && setTimeout(() => dispatch(setInitializing(false)), 1500)
+    }, [])
+
     return (
         <div className="relative overflow-x-hidden">
-            <Head>
-                <title>Website Name</title>
-                <meta name="theme-color" content="#000" />
-                <link rel="icon" type="image/png" href="./favicon.ico" />
-
-                <meta
-                    name="description"
-                    content="description goes here in this very exact meta tag"
-                />
-
-                <meta property="og:url" content="bhr.sa" />
-                <meta property="og:type" content="website" />
-                <meta property="og:title" content="Website Title" />
-                <meta
-                    property="og:description"
-                    content="description goes here in this very exact meta tag"
-                />
-                <meta
-                    property="og:image"
-                    content="https://www.bhr.sa/assets/images/main.png"
-                />
-
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta property="twitter:domain" content="bhr.sa" />
-                <meta property="twitter:url" content="https://bhr.sa" />
-                <meta name="twitter:title" content="Website Title" />
-                <meta
-                    name="twitter:description"
-                    content="description goes here in this very exact meta tag"
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://www.bhr.sa/assets/images/main.png"
-                />
-            </Head>
-
             <ToastContainer
                 position="top-center"
                 rtl={false}
@@ -63,7 +40,13 @@ export function AppLayout(props: any) {
                 limit={1}
             />
 
-            {user ? <AppBar>{children}</AppBar> : <LoginForm />}
+            {initializing ? (
+                <AppInitializing />
+            ) : {} ? (
+                <AppBar>{children}</AppBar>
+            ) : (
+                <LoginForm />
+            )}
         </div>
     )
 }

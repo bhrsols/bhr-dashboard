@@ -19,7 +19,7 @@ export const Button = (props: IButtonProps) => {
             type={type}
             onClick={onClick}
             disabled={disabled}
-            className={`block px-3 text-white md:px-5 py-2 border border-transparent  rounded shadow-md focus:outline-none focus:ring-1 focus:ring-black  transition 
+            className={`block px-3 md:px-5 py-2 border border-transparent  rounded shadow-md focus:outline-none focus:ring-1 focus:ring-black  transition 
       ${
           (color === 'danger' && 'bg-red-600 hover:bg-red-600 bg-opacity-90') ||
           (color === 'warning' && 'bg-yellow-500 hover:bg-yellow-600') ||
