@@ -10,11 +10,18 @@ export type UIState = {
     locale: LOCALE
     t: AppLocale
     dir: 'rtl' | 'ltr'
+    openSettings: boolean
 }
 
 export type UIStateToSave = {
     theme: 'light' | 'dark'
     locale: LOCALE
+    openSettings: boolean
+}
+
+export interface IAppModalProps {
+    children: any
+    show: boolean
 }
 
 export interface InputFieldProps {

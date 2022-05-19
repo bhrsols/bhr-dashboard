@@ -16,6 +16,6 @@
         "incremental": true,
         "baseUrl": "."
     },
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/layout/components/navigation.js"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/layout/components/navigation.js"],
     "exclude": ["node_modules"]
 }

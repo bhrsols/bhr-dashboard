@@ -1,4 +1,3 @@
-import { OpenSettings } from './OpenSettings'
 import { Sidebar } from './Sidebar'
 import { ToggleSidebar } from './ToggleSidebar'
 
@@ -14,12 +13,6 @@ export function AppBar(props: any) {
                         <div className="container max-w-8xl mx-auto px-2 sm:px-6 lg:px-6">
                             <div className="relative flex items-center justify-between px-2">
                                 <ToggleSidebar />
-
-                                <div className="flex">
-                                    <div className="mx-3">
-                                        <OpenSettings />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </nav>

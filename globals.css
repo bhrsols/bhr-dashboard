@@ -39,6 +39,106 @@
     }
 }
 
+/* CSS Animations*/
+@keyframes grow {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.animate-grow {
+    animation: grow ease-out 0.3s;
+}
+
+.animate-slideIn {
+    animation: slideUp 0.8s ease forwards 0.5s;
+}
+
+.animate-slideUp {
+    animation: slideUp 0.8s ease-in-out forwards 1s;
+}
+
+.animate-expand {
+    animation: expand 0.8s ease forwards;
+}
+
+.animate-overlay {
+    animation: overlay 0.15s ease forwards;
+}
+
+@keyframes overlay {
+    0% {
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+    25% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.75);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(500px) scale(0.2);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(300px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: translateX(1400px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* Scrollbar styles*/
+::-webkit-scrollbar {
+    width: 4px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(229, 231, 235, var(--bg-opacity));
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: #1ea3a6;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
 /* Gradient Spinner Styles */
 .gradient-spinner {
     --border-width: 6px;

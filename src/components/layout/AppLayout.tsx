@@ -4,8 +4,13 @@ import {
     useAppSelector,
     initApp,
     setInitializing,
-} from 'src/state'
-import { LoginForm, AppInitializing } from 'src/components'
+} from 'src/app'
+import {
+    LoginForm,
+    AppInitializing,
+    AppModal,
+    AppSettings,
+} from 'src/components'
 import { AppBar } from './components/AppBar'
 import { useEffect } from 'react'
 
@@ -13,7 +18,7 @@ export function AppLayout(props: any) {
     const dispatch = useAppDispatch()
     const { ui } = useAppSelector(state => state)
     const { children } = props
-    const { appInitialized, initializing } = ui
+    const { appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
         !appInitialized && dispatch(initApp())
@@ -39,6 +44,10 @@ export function AppLayout(props: any) {
                 pauseOnHover
                 limit={1}
             />
+
+            <AppModal show={openSettings}>
+                <AppSettings />
+            </AppModal>
 
             {initializing ? (
                 <AppInitializing />

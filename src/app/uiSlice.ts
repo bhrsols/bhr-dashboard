@@ -10,6 +10,7 @@ const initialState = {
     locale: LOCALE.AR,
     t: ar,
     dir: 'rtl',
+    openSettings: false,
 } as UIState
 
 export const uiSlice = createSlice({
@@ -33,6 +34,7 @@ export const uiSlice = createSlice({
             const stateToSave: UIStateToSave = {
                 theme: state.theme,
                 locale: state.locale,
+                openSettings: state.openSettings,
             }
 
             saveLocalStorage('ui', stateToSave)
@@ -67,6 +69,20 @@ export const uiSlice = createSlice({
             const stateToSave: UIStateToSave = {
                 theme: state.theme,
                 locale: state.locale,
+                openSettings: state.openSettings,
+            }
+
+            saveLocalStorage('ui', stateToSave)
+        },
+
+        // Open app settings
+        setOpenSettings: (state, action) => {
+            state.openSettings = action.payload
+
+            const stateToSave: UIStateToSave = {
+                theme: state.theme,
+                locale: state.locale,
+                openSettings: state.openSettings,
             }
 
             saveLocalStorage('ui', stateToSave)
@@ -118,6 +134,7 @@ export const initApp = createAsyncThunk('ui/initApp', async () => {
     }
 })
 
-export const { switchTheme, setInitializing, setLocale } = uiSlice.actions
+export const { switchTheme, setInitializing, setLocale, setOpenSettings } =
+    uiSlice.actions
 
 export default uiSlice.reducer
