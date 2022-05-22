@@ -4,8 +4,253 @@
 @layer base {
     html,
     body {
-        @apply bg-lightbg text-secondary dark:bg-darkbg dark:text-primary font-primary transition duration-300;
+        @apply bg-lightbg text-darkbg dark:bg-darkbg dark:text-lightbg font-primary leading-loose tracking-wide transition duration-300 box-border;
     }
+    /* Text and Headings */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+    }
+
+    h1 {
+        @apply text-6xl;
+    }
+
+    h2 {
+        @apply text-5xl;
+    }
+
+    h3 {
+        @apply text-4xl;
+    }
+
+    h4 {
+        @apply text-3xl;
+    }
+
+    h5 {
+        @apply text-2xl;
+    }
+
+    h6 {
+        @apply text-xl;
+    }
+
+    p {
+        @apply text-lg;
+    }
+
+    /* Widths and Heights */
+    .rtl = {
+        direction: rtl;
+    }
+    .ltr = {
+        direction: ltr;
+    }
+
+    .min-h-400 {
+        min-height: 400px;
+    }
+
+    .min-w-7 {
+        min-width: 7rem;
+    }
+
+    /* Backgrounds and Colors */
+    .bg-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Toggle ltr styles */
+    .toggle-checkbox-left {
+        @apply border-4 border-disabled cursor-pointer;
+        animation: slide-left ease 0.3s;
+    }
+
+    .toggle-checkbox-left:checked {
+        @apply right-0 border-4 border-primary;
+        animation: slide-right ease 0.3s;
+    }
+
+    /* Toggle rtl styles */
+    .toggle-checkbox-right {
+        @apply border-4 border-disabled cursor-pointer;
+        animation: slide-right ease 0.3s;
+    }
+
+    .toggle-checkbox-right:checked {
+        @apply left-0 border-4 border-primary;
+        animation: slide-left ease 0.3s;
+    }
+
+    .toggle-checkbox-right:checked + .toggle-label,
+    .toggle-checkbox-left:checked + .toggle-label {
+        @apply bg-primary;
+    }
+
+    /* Dev Classes */
+    .dev-border {
+        border: 5px solid red;
+    }
+
+    /* CSS Animations*/
+    @keyframes grow {
+        from {
+            transform: scale(0.9);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .animate-grow {
+        animation: grow ease-out 0.3s;
+    }
+
+    .animate-slideIn {
+        animation: slideUp 0.8s ease forwards 0.5s;
+    }
+
+    .animate-slideUp {
+        animation: slideUp 0.8s ease-in-out forwards 1s;
+    }
+
+    .animate-expand {
+        animation: expand 0.8s ease forwards;
+    }
+
+    .animate-overlay {
+        animation: overlay 0.15s ease forwards;
+    }
+
+    .animate-slide-right {
+        animation: slide-right ease-in 0.2s;
+    }
+
+    .animate-slide-left {
+        animation: slide-left ease-in 0.2s;
+    }
+
+    @keyframes overlay {
+        0% {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        25% {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        50% {
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+        75% {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        100% {
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+    }
+
+    @keyframes grow {
+        from {
+            transform: scale(0.75);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(500px) scale(0.2);
+        }
+        100% {
+            transform: translateX(0px) scale(1);
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(300px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes expand {
+        0% {
+            transform: translateX(1400px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes slide-right {
+        from {
+            transform: translateX(-8px);
+        }
+        to {
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes slide-left {
+        from {
+            transform: translateX(8px);
+        }
+        to {
+            transform: translateX(0px);
+        }
+    }
+
+    /* Scrollbar styles*/
+    ::-webkit-scrollbar {
+        width: 4px;
+        cursor: pointer;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(229, 231, 235, var(--bg-opacity));
+        cursor: pointer;
+    }
+    ::-webkit-scrollbar-thumb {
+        cursor: pointer;
+        background-color: #1ea3a6;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    /* Gradient Spinner Styles */
+    .gradient-spinner {
+        --border-width: 6px;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+
+        --mask: radial-gradient(
+            farthest-side,
+            transparent calc(100% - var(--border-width) - 0.5px),
+            #000 calc(100% - var(--border-width) + 0.5px)
+        );
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+
+        background: linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
     /* Typography */
     @font-face {
         font-family: Changa;
@@ -39,132 +284,36 @@
     }
 }
 
-/* CSS Animations*/
-@keyframes grow {
-    from {
-        transform: scale(0.9);
+@layer components {
+    /* .my-react-select-container {
+    } */
+    .my-react-select-container .my-react-select__control {
+        @apply bg-lightfg dark:bg-darkbg border-2 border-disabled hover:border-disabled dark:border-warm hover:dark:border-warmer min-w-7 cursor-pointer;
     }
-    to {
-        transform: scale(1);
-    }
-}
 
-.animate-grow {
-    animation: grow ease-out 0.3s;
-}
-
-.animate-slideIn {
-    animation: slideUp 0.8s ease forwards 0.5s;
-}
-
-.animate-slideUp {
-    animation: slideUp 0.8s ease-in-out forwards 1s;
-}
-
-.animate-expand {
-    animation: expand 0.8s ease forwards;
-}
-
-.animate-overlay {
-    animation: overlay 0.15s ease forwards;
-}
-
-@keyframes overlay {
-    0% {
-        background-color: rgba(0, 0, 0, 0.15);
+    .my-react-select-container .my-react-select__control--is-focused {
+        @apply border-disabled hover:border-disabled dark:border-warmer hover:dark:border-warmer shadow-none;
     }
-    25% {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    50% {
-        background-color: rgba(0, 0, 0, 0.45);
-    }
-    75% {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.75);
-    }
-}
 
-@keyframes grow {
-    from {
-        transform: scale(0.75);
+    .my-react-select-container .my-react-select__menu {
+        @apply bg-lightfg dark:bg-darkbg border-2 border-gentle dark:border-warm;
     }
-    to {
-        transform: scale(1);
-    }
-}
 
-@keyframes slideIn {
-    0% {
-        transform: translateX(500px) scale(0.2);
+    .my-react-select-container .my-react-select__option {
+        @apply text-darkbg dark:text-lightfg bg-lightfg hover:bg-gentle dark:bg-darkbg dark:hover:bg-warm text-center;
     }
-    100% {
-        transform: translateX(0px) scale(1);
+    /* .my-react-select-container .my-react-select__option--is-focused {
+        @apply bg-neutral-200 dark:bg-neutral-800;
+    } */
+
+    .my-react-select-container .my-react-select__indicator-separator {
+        @apply bg-disabled dark:bg-warm;
     }
-}
 
-@keyframes slideUp {
-    0% {
-        transform: translateY(300px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-@keyframes expand {
-    0% {
-        transform: translateX(1400px);
-    }
-    100% {
-        transform: translateX(0px);
-    }
-}
-
-/* Scrollbar styles*/
-::-webkit-scrollbar {
-    width: 4px;
-    cursor: pointer;
-}
-::-webkit-scrollbar-track {
-    background-color: rgba(229, 231, 235, var(--bg-opacity));
-    cursor: pointer;
-}
-::-webkit-scrollbar-thumb {
-    cursor: pointer;
-    background-color: #1ea3a6;
-    border-radius: 10px;
-    margin-top: 50px;
-}
-
-/* Gradient Spinner Styles */
-.gradient-spinner {
-    --border-width: 6px;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-
-    --mask: radial-gradient(
-        farthest-side,
-        transparent calc(100% - var(--border-width) - 0.5px),
-        #000 calc(100% - var(--border-width) + 0.5px)
-    );
-    -webkit-mask: var(--mask);
-    mask: var(--mask);
-
-    background: linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
-        linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
+    .my-react-select-container .my-react-select__input-container,
+    .my-react-select-container .my-react-select__placeholder,
+    .my-react-select-container .my-react-select__single-value {
+        @apply text-neutral-600 dark:text-neutral-200;
     }
 }
 
@@ -174,7 +323,7 @@
 }
 
 #nprogress .bar {
-    background: linear-gradient(45deg, #4e6386, #2397d4, #8aa926);
+    background: linear-gradient(45deg, #1ea3a6, #2a2d4c);
 
     position: fixed;
     z-index: 1031;

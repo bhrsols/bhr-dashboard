@@ -19,9 +19,50 @@ export type UIStateToSave = {
     openSettings: boolean
 }
 
+export type ReactSelectOption = {
+    value: string
+    label: string
+}
+
+export interface IButtonSettingProps {
+    btn: JSX.Element
+    icon: JSX.Element
+    name: string
+}
+
+export interface ISelectSettingProps {
+    options: Array<ReactSelectOption>
+    value: string
+    onChange: any
+    icon: JSX.Element
+    name: string
+}
+
+export interface ISelectProps {
+    options: Array<string>
+    placeholder?: string
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void
+    disabled?: boolean
+    width?: 'small' | 'medium' | 'large'
+    classes?: string
+}
+
+export interface IToggleSettingProps {
+    onClick: (e: React.MouseEvent) => void
+    name: string
+    icon: JSX.Element
+    toggled: boolean
+}
+
+export interface IToggleProps {
+    toggled: boolean
+}
+
 export interface IAppModalProps {
     children: any
     show: boolean
+    hide: () => void
 }
 
 export interface InputFieldProps {
@@ -53,15 +94,11 @@ export interface InputFieldProps {
 
 export interface IButtonProps {
     text: string
-    onClick?: (e: any) => void
-    outLine?: boolean
-    fullWidth?: boolean
-    icon?: any
+    onClick: (e: any) => void
     loading?: boolean
-    type?: 'submit' | 'reset' | 'button'
-    color?: 'danger' | 'warning'
     disabled?: boolean
     classes?: string
+    variant: 'default' | 'danger' | 'warning'
 }
 
 export enum HTTPResponse {
@@ -98,10 +135,18 @@ export enum REST {
 }
 
 export enum LOCALE {
-    EN = 'en',
-    AR = 'ar',
+    EN = 'English',
+    AR = 'عربي',
 }
 
 export type AppLocale = {
     APP_TITLE: string
+    SETTINGS: string
+    DARK_THEME: string
+    APP_LOCALE: string
+    SELECT_LOCALE: string
+    RESET_SETTINGS: string
+    RESET: string
+    CLEAR_DATA: string
+    DELETE: string
 }

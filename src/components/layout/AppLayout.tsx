@@ -4,6 +4,7 @@ import {
     useAppSelector,
     initApp,
     setInitializing,
+    setOpenSettings,
 } from 'src/app'
 import {
     LoginForm,
@@ -45,7 +46,10 @@ export function AppLayout(props: any) {
                 limit={1}
             />
 
-            <AppModal show={openSettings}>
+            <AppModal
+                show={openSettings}
+                hide={() => dispatch(setOpenSettings(false))}
+            >
                 <AppSettings />
             </AppModal>
 

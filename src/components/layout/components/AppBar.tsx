@@ -1,18 +1,39 @@
+import Link from 'next/link'
+import { MdSettingsSuggest } from 'react-icons/md'
+import { setOpenSettings, useAppDispatch } from 'src/app'
 import { Sidebar } from './Sidebar'
-import { ToggleSidebar } from './ToggleSidebar'
 
 export function AppBar(props: any) {
+    const dispatch = useAppDispatch()
     const { children } = props
+
+    const handleOpenSettings = () => {
+        dispatch(setOpenSettings(true))
+    }
     return (
         <div className="flex h-screen">
             <Sidebar />
 
             <div className="flex flex-col flex-1 w-full sticky z-10">
                 <header>
-                    <nav className="h-24 flex items-center shadow-md">
-                        <div className="container max-w-8xl mx-auto px-2 sm:px-6 lg:px-6">
-                            <div className="relative flex items-center justify-between px-2">
-                                <ToggleSidebar />
+                    <nav className="h-24 px-4 flex items-center justify-between shadow-md">
+                        <div className="cursor-pointer">
+                            <Link href="/">
+                                <img
+                                    alt="NTIS Logo"
+                                    src="/static/logo.png"
+                                    width={64}
+                                    className="opacity-90 hover:opacity-100"
+                                    draggable={false}
+                                />
+                            </Link>
+                        </div>
+                        <div className="flex justify-between items-center gap-4">
+                            <div
+                                className="hover:text-primary cursor-pointer"
+                                onClick={handleOpenSettings}
+                            >
+                                <MdSettingsSuggest size={44} />
                             </div>
                         </div>
                     </nav>

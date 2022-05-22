@@ -15,24 +15,7 @@ const Home: NextPage = () => {
     const dispatch = useAppDispatch()
     const { t, locale, openSettings } = useAppSelector(state => state.ui)
 
-    return (
-        <AppLayout>
-            <Link href="/">{t.APP_TITLE}</Link>
-            <Button text="theme" onClick={() => dispatch(switchTheme())} />
-            <Button
-                text="locale"
-                onClick={() =>
-                    dispatch(
-                        setLocale(locale === LOCALE.EN ? LOCALE.AR : LOCALE.EN)
-                    )
-                }
-            />
-            <Button
-                text="settings"
-                onClick={() => dispatch(setOpenSettings(true))}
-            />
-        </AppLayout>
-    )
+    return <AppLayout></AppLayout>
 }
 
 export default Home

@@ -1,8 +1,12 @@
 export * from './InputField'
 export * from './Button'
+export * from './Toggle'
 
 export * from './AppLoading'
 export * from './AppInitializing'
 export * from './LoginForm'
 export * from './AppModal'
 export * from './AppSettings'
+export * from './ToggleSetting'
+export * from './SelectSetting'
+export * from './ButtonSetting'

@@ -18,6 +18,10 @@ export function getAllStorage() {
     return values
 }
 
+export function clearStorage() {
+    localStorage.clear()
+}
+
 export function setCookie(key: string, value: string, days: number) {
     var expires = ''
     if (days) {
@@ -41,6 +45,15 @@ export function getCookie(key: string) {
 
 export function delCookie(key: string) {
     document.cookie = key + '=; Max-Age=0'
+}
+
+export function clearCookies() {
+    document.cookie = ''
+}
+
+export function clearStorageAndCookies() {
+    clearStorage()
+    clearCookies()
 }
 
 export function sleep(ms: number) {
