@@ -11,7 +11,6 @@ export const SelectSetting = (props: ISelectSettingProps) => {
                 <h5 className="mx-4">{name}</h5>
             </div>
             <Select
-                placeholder={value}
                 options={options}
                 isSearchable={false}
                 onChange={onChange}

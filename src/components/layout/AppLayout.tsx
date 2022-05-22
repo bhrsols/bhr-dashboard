@@ -3,7 +3,6 @@ import {
     useAppDispatch,
     useAppSelector,
     initApp,
-    setInitializing,
     setOpenSettings,
 } from 'src/app'
 import {
@@ -23,8 +22,7 @@ export function AppLayout(props: any) {
 
     useEffect(() => {
         !appInitialized && dispatch(initApp())
-        initializing && setTimeout(() => dispatch(setInitializing(false)), 1500)
-    }, [])
+    }, [appInitialized, dispatch])
 
     return (
         <div className="relative overflow-x-hidden">

@@ -55,7 +55,7 @@ export function AppSettings() {
             onClick={e => e.stopPropagation()}
         >
             <div className="flex justify-between items-center p-4 mb-4 border-b-2 border-gentle">
-                <h3>{t.SETTINGS}</h3>
+                <h4>{t.SETTINGS}</h4>
                 <MdOutlineClose
                     size={36}
                     className="hover:cursor-pointer"

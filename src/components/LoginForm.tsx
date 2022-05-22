@@ -53,12 +53,11 @@ export function LoginForm() {
 
                     <div className="flex justify-center mt-4">
                         <Button
-                            outLine={false}
                             text="LOGIN"
-                            fullWidth={true}
-                            icon={<FiLogIn size="20" />}
                             loading={false}
                             disabled={false}
+                            onClick={() => null}
+                            variant="default"
                         />
                     </div>
                 </div>

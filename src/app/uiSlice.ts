@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getLocalStorageByKey, saveLocalStorage } from 'helpers'
+import { getLocalStorageByKey, saveLocalStorage, sleep } from 'helpers'
 import { UIState, UIStateToSave, LOCALE } from 'types'
 import { ar, en } from 'locale'
 
@@ -121,7 +121,9 @@ export const uiSlice = createSlice({
                     state.t = ar
             }
 
+            state.openSettings = uiState.openSettings
             state.appInitialized = true
+            state.initializing = false
         })
     },
 })
@@ -129,6 +131,9 @@ export const uiSlice = createSlice({
 export const initApp = createAsyncThunk('ui/initApp', async () => {
     const uiState =
         (getLocalStorageByKey('ui') as UIStateToSave) || initialState
+
+    await sleep(1000)
+
     return {
         uiState,
     }
