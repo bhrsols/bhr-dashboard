@@ -57,7 +57,6 @@ export function LoginForm() {
                             loading={false}
                             disabled={false}
                             onClick={() => null}
-                            variant="default"
                         />
                     </div>
                 </div>
