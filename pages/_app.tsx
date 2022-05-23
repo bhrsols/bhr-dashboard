@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <Provider store={store}>
             <Head>
-                <title>Website Name</title>
                 <meta name="theme-color" content="#1ea3a6" />
                 <link rel="icon" type="image/png" href="./favicon.ico" />
 

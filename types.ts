@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 export type TestState = {
     msg: string
     user: any
@@ -13,6 +15,12 @@ export type UIState = {
     openSettings: boolean
 }
 
+export type NavItem = {
+    localeKey: string
+    path: string
+    icon: ReactElement<any, any>
+}
+
 export type UIStateToSave = {
     theme: 'light' | 'dark'
     locale: LOCALE
@@ -22,6 +30,10 @@ export type UIStateToSave = {
 export type ReactSelectOption = {
     value: string
     label: string
+}
+
+export interface ISidebarMenuProps {
+    items: Array<SidebarMenuItem>
 }
 
 export interface IButtonSettingProps {
@@ -53,6 +65,15 @@ export interface IToggleSettingProps {
     name: string
     icon: JSX.Element
     toggled: boolean
+}
+
+export interface ISidebarNavProps {
+    navs: Array<NavItem>
+}
+
+export interface SidebarMenuItem {
+    onClick: Function
+    name: string
 }
 
 export interface IToggleProps {
@@ -94,11 +115,11 @@ export interface InputFieldProps {
 
 export interface IButtonProps {
     text: string
-    onClick: (e: any) => void
+    onClick?: (e: any) => void
     loading?: boolean
     disabled?: boolean
     classes?: string
-    variant: 'default' | 'danger' | 'warning'
+    variant?: 'danger' | 'warning'
 }
 
 export enum HTTPResponse {
@@ -149,4 +170,13 @@ export type AppLocale = {
     RESET: string
     CLEAR_DATA: string
     DELETE: string
+    NOT_FOUND: string
+    NUM_404: string
+    BACK_HOME: string
+    OVERVIEW: string
+    CLIENTS: string
+    RECEIPTS: string
+    LOG_OUT: string
+    LOG_IN: string
+    HELP: string
 }

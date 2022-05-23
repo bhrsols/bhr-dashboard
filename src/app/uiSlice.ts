@@ -132,7 +132,7 @@ export const initApp = createAsyncThunk('ui/initApp', async () => {
     const uiState =
         (getLocalStorageByKey('ui') as UIStateToSave) || initialState
 
-    await sleep(1000)
+    await sleep(900)
 
     return {
         uiState,

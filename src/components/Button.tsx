@@ -6,19 +6,19 @@ export const Button = (props: IButtonProps) => {
     return (
         <div
             onClick={e => {
-                if (!disabled) onClick(e)
+                if (!disabled && onClick) onClick(e)
             }}
-            className={`min-w-7 text-center text-white bg-opacity-90 hover:bg-opacity-100 rounded-xl shadow py-1 px-4 cursor-pointer 
+            className={`min-w-9 text-center font-bold text-white rounded-xl shadow py-1 px-4 select-none cursor-pointer onclick-push
             ${disabled && 'bg-disabled'}
             ${
                 variant === 'danger'
-                    ? 'bg-danger'
+                    ? 'bg-gradient-to-r from-danger to-watermelon hover:from-watermelon hover:to-danger'
                     : variant === 'warning'
-                    ? 'bg-warning'
-                    : 'bg-primary'
+                    ? 'bg-gradient-to-r from-warning to-orange hover:from-orange hover:to-warning'
+                    : 'bg-gradient-to-r from-primary to-blend hover:from-blend hover:to-primary'
             } ${classes}`}
         >
-            {text.toUpperCase()}
+            <p>{text.toUpperCase()}</p>
         </div>
     )
 }

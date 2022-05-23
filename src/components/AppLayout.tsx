@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import { useEffect } from 'react'
 import { ToastContainer } from 'react-toastify'
 import {
     useAppDispatch,
@@ -10,15 +12,14 @@ import {
     AppInitializing,
     AppModal,
     AppSettings,
+    AppMenu,
 } from 'src/components'
-import { AppBar } from './components/AppBar'
-import { useEffect } from 'react'
 
 export function AppLayout(props: any) {
     const dispatch = useAppDispatch()
     const { ui } = useAppSelector(state => state)
     const { children } = props
-    const { appInitialized, initializing, openSettings } = ui
+    const { t, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
         !appInitialized && dispatch(initApp())
@@ -26,6 +27,10 @@ export function AppLayout(props: any) {
 
     return (
         <div className="relative overflow-x-hidden">
+            <Head>
+                <title>{t.APP_TITLE}</title>
+            </Head>
+
             <ToastContainer
                 position="top-center"
                 rtl={false}
@@ -33,7 +38,7 @@ export function AppLayout(props: any) {
                     color: '#121317',
                     backgroundColor: '#ffffff',
                 }}
-                autoClose={1500}
+                autoClose={1000}
                 closeButton={false}
                 hideProgressBar={false}
                 newestOnTop={false}
@@ -54,7 +59,7 @@ export function AppLayout(props: any) {
             {initializing ? (
                 <AppInitializing />
             ) : {} ? (
-                <AppBar>{children}</AppBar>
+                <AppMenu>{children}</AppMenu>
             ) : (
                 <LoginForm />
             )}

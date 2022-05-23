@@ -1,4 +1,3 @@
-import { clearStorageAndCookies } from 'helpers'
 import React from 'react'
 import {
     MdOutlineClose,
@@ -21,6 +20,7 @@ import {
     Button,
 } from 'src/components'
 import { LOCALE, ReactSelectOption } from 'types'
+import { clearStorageAndCookies } from 'helpers'
 
 export function AppSettings() {
     const dispatch = useAppDispatch()
@@ -96,7 +96,7 @@ export function AppSettings() {
                 btn={
                     <Button
                         text={t.RESET}
-                        variant="warning"
+                        // variant="warning"
                         onClick={handleRestSettings}
                     />
                 }

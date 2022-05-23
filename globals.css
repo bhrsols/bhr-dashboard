@@ -4,7 +4,7 @@
 @layer base {
     html,
     body {
-        @apply bg-lightbg text-darkbg dark:bg-darkbg dark:text-lightbg font-primary leading-loose tracking-wide transition duration-300 box-border;
+        @apply bg-lightbg text-secondary dark:bg-darkbg dark:text-lightbg font-primary leading-loose tracking-wide transition duration-300 box-border;
     }
     /* Text and Headings */
     h1,
@@ -16,31 +16,31 @@
     }
 
     h1 {
-        @apply text-6xl;
+        @apply text-5xl md:text-6xl;
     }
 
     h2 {
-        @apply text-5xl;
+        @apply text-4xl md:text-5xl;
     }
 
     h3 {
-        @apply text-4xl;
+        @apply text-3xl md:text-4xl;
     }
 
     h4 {
-        @apply text-3xl;
+        @apply text-2xl md:text-3xl;
     }
 
     h5 {
-        @apply text-2xl;
+        @apply text-xl md:text-2xl;
     }
 
     h6 {
-        @apply text-xl;
+        @apply text-lg md:text-xl;
     }
 
     p {
-        @apply text-lg;
+        @apply text-base md:text-lg;
     }
 
     /* Widths and Heights */
@@ -57,6 +57,10 @@
 
     .min-w-7 {
         min-width: 7rem;
+    }
+
+    .min-w-9 {
+        min-width: 9rem;
     }
 
     /* Backgrounds and Colors */
@@ -134,6 +138,10 @@
         animation: slide-left ease-in 0.2s;
     }
 
+    .onclick-push:active {
+        transform: translateY(1px);
+    }
+
     @keyframes overlay {
         0% {
             background-color: rgba(0, 0, 0, 0.15);
@@ -203,6 +211,15 @@
         }
         to {
             transform: translateX(0px);
+        }
+    }
+
+    @keyframes push {
+        from {
+            transform: translateY(0px);
+        }
+        to {
+            transform: translateY(4px);
         }
     }
 
@@ -288,7 +305,7 @@
     /* .my-react-select-container {
     } */
     .my-react-select-container .my-react-select__control {
-        @apply bg-lightfg dark:bg-darkbg border-2 border-disabled hover:border-disabled dark:border-warm hover:dark:border-warmer min-w-7 cursor-pointer;
+        @apply bg-lightfg dark:bg-darkbg border-2 border-disabled hover:border-disabled dark:border-warm hover:dark:border-warmer min-w-9 cursor-pointer;
     }
 
     .my-react-select-container .my-react-select__control--is-focused {
