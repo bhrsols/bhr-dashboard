@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { AppLayout } from 'src/components'
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
     return (
         <AppLayout>
             <h1>hello world</h1>
@@ -9,4 +9,4 @@ const Home: NextPage = () => {
     )
 }
 
-export default Home
+export default HomePage

@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useAppSelector } from 'src/app'
 import { Button, AppLayout } from 'src/components'
 
-export default () => {
+const NotFoundPage: NextPage = () => {
     const router = useRouter()
     const { t } = useAppSelector(state => state.ui)
 
@@ -25,3 +25,5 @@ export default () => {
         </AppLayout>
     )
 }
+
+export default NotFoundPage
