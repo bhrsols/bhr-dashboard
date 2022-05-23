@@ -99,10 +99,8 @@ export function AppMenu(props: any) {
                     </nav>
                 </header>
 
-                <main className="h-full overflow-y-auto overflow-x-hidden p-4 animate-grow-light">
-                    <div className="h-full container px-2 md:px-6 mx-auto transition-all duration-500 ease-in-out">
-                        {children}
-                    </div>
+                <main className="h-full overflow-y-auto overflow-x-hidden">
+                    <div className="h-full container">{children}</div>
                 </main>
             </div>
         </div>

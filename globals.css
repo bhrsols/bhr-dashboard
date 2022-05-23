@@ -4,7 +4,7 @@
 @layer base {
     html,
     body {
-        @apply bg-lightbg text-secondary dark:bg-darkbg dark:text-lightbg font-primary leading-loose tracking-wide transition duration-300 box-border;
+        @apply bg-lightbg text-secondary dark:bg-darkbg dark:text-lightbg font-primary leading-loose tracking-wide box-border;
     }
     /* Text and Headings */
     h1,
