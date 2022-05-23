@@ -51,7 +51,7 @@ export function AppMenu(props: any) {
     return (
         <div className="flex h-screen">
             <div className="flex h-screen dark:bg-darkfg shadow-md dark:shadow-2xl border-r border-l border-gentle border-opacity-10">
-                <aside className="z-20 w-80 overflow-y-auto shadow-md dark:shadow-2xl flex flex-col justify-start">
+                <aside className="w-80 overflow-y-auto shadow-md dark:shadow-2xl flex flex-col justify-start">
                     <SidebarTitle />
 
                     <SidebarNav navs={navs} />
@@ -60,7 +60,7 @@ export function AppMenu(props: any) {
                 </aside>
             </div>
 
-            <div className="flex flex-col flex-1 w-full sticky z-10">
+            <div className="flex flex-col flex-1 w-full sticky">
                 <header>
                     <nav className="h-24 px-4 flex items-center justify-between dark:bg-darkfg shadow-md dark:shadow-2xl border-b border-gentle border-opacity-10">
                         <div className="cursor-pointer">
