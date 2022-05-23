@@ -6,6 +6,7 @@ import {
     useAppSelector,
     initApp,
     setOpenSettings,
+    setInitializing,
 } from 'src/app'
 import {
     LoginForm,
@@ -22,8 +23,14 @@ export function AppLayout(props: any) {
     const { t, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
-        !appInitialized && dispatch(initApp())
-    }, [appInitialized, dispatch])
+        if (!appInitialized) {
+            dispatch(initApp())
+        }
+
+        if (initializing) {
+            setTimeout(() => dispatch(setInitializing(false)), 1000)
+        }
+    }, [])
 
     return (
         <div className="relative overflow-x-hidden">
@@ -49,6 +56,8 @@ export function AppLayout(props: any) {
                 limit={1}
             />
 
+            <AppInitializing />
+
             <AppModal
                 show={openSettings}
                 hide={() => dispatch(setOpenSettings(false))}
@@ -56,13 +65,7 @@ export function AppLayout(props: any) {
                 <AppSettings />
             </AppModal>
 
-            {initializing ? (
-                <AppInitializing />
-            ) : {} ? (
-                <AppMenu>{children}</AppMenu>
-            ) : (
-                <LoginForm />
-            )}
+            {{} ? <AppMenu>{children}</AppMenu> : <LoginForm />}
         </div>
     )
 }

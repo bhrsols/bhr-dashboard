@@ -123,7 +123,6 @@ export const uiSlice = createSlice({
 
             state.openSettings = uiState.openSettings
             state.appInitialized = true
-            state.initializing = false
         })
     },
 })
@@ -131,8 +130,6 @@ export const uiSlice = createSlice({
 export const initApp = createAsyncThunk('ui/initApp', async () => {
     const uiState =
         (getLocalStorageByKey('ui') as UIStateToSave) || initialState
-
-    await sleep(900)
 
     return {
         uiState,
