@@ -21,6 +21,7 @@ import {
 } from 'src/components'
 import { LOCALE, ReactSelectOption } from 'types'
 import { clearStorageAndCookies } from 'helpers'
+import { toast } from 'react-toastify'
 
 export function AppSettings() {
     const dispatch = useAppDispatch()
@@ -31,21 +32,25 @@ export function AppSettings() {
         { value: LOCALE.AR, label: LOCALE.AR },
     ]
 
-    const handleSwitchTheme = (e: React.MouseEvent) => {
+    const handleSwitchTheme = (_: React.MouseEvent) => {
         dispatch(switchTheme())
+        toast.info(t.SETTINGS_UPDATED)
     }
 
     const handleSwitchLocale = (option: ReactSelectOption) => {
         dispatch(setLocale(option.value))
+        toast.info(t.SETTINGS_UPDATED)
     }
 
     const handleRestSettings = () => {
         dispatch(switchTheme())
         dispatch(setLocale(LOCALE.AR))
+        toast.info(t.SETTINGS_RESET)
     }
 
     const handleClearData = () => {
         clearStorageAndCookies()
+        toast.info(t.DATA_CLEARED)
     }
 
     return (

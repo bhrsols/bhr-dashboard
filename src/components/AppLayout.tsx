@@ -9,7 +9,7 @@ import {
     setInitializing,
 } from 'src/app'
 import {
-    LoginForm,
+    AppLogin,
     AppInitializing,
     AppModal,
     AppSettings,
@@ -20,7 +20,7 @@ export function AppLayout(props: any) {
     const dispatch = useAppDispatch()
     const { ui } = useAppSelector(state => state)
     const { children } = props
-    const { t, appInitialized, initializing, openSettings } = ui
+    const { t, dir, theme, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
         if (!appInitialized) {
@@ -40,11 +40,8 @@ export function AppLayout(props: any) {
 
             <ToastContainer
                 position="top-center"
-                rtl={false}
-                toastStyle={{
-                    color: '#121317',
-                    backgroundColor: '#ffffff',
-                }}
+                rtl={dir === 'rtl'}
+                theme={theme}
                 autoClose={1000}
                 closeButton={false}
                 hideProgressBar={false}
@@ -65,7 +62,7 @@ export function AppLayout(props: any) {
                 <AppSettings />
             </AppModal>
 
-            {{} ? <AppMenu>{children}</AppMenu> : <LoginForm />}
+            {false ? <AppMenu>{children}</AppMenu> : <AppLogin />}
         </div>
     )
 }

@@ -70,7 +70,7 @@
 
     /* Toggle ltr styles */
     .toggle-checkbox-left {
-        @apply border-4 border-disabled cursor-pointer;
+        @apply border-4 border-shade cursor-pointer;
         animation: slide-left ease 0.3s;
     }
 
@@ -81,7 +81,7 @@
 
     /* Toggle rtl styles */
     .toggle-checkbox-right {
-        @apply border-4 border-disabled cursor-pointer;
+        @apply border-4 border-shade cursor-pointer;
         animation: slide-right ease 0.3s;
     }
 
@@ -267,38 +267,6 @@
             transform: rotate(360deg);
         }
     }
-
-    /* Typography */
-    @font-face {
-        font-family: Changa;
-        font-weight: 400;
-        src: url(/static/fonts/Changa-ExtraLight.ttf);
-    }
-    @font-face {
-        font-family: Changa;
-        font-weight: 500;
-        src: url(/static/fonts/Changa-Light.ttf);
-    }
-    @font-face {
-        font-family: Changa;
-        font-weight: 600;
-        src: url(/static/fonts/Changa-Regular.ttf);
-    }
-    @font-face {
-        font-family: Changa;
-        font-weight: 700;
-        src: url(/static/fonts/Changa-Medium.ttf);
-    }
-    @font-face {
-        font-family: Changa;
-        font-weight: 800;
-        src: url(/static/fonts/Changa-Bold.ttf);
-    }
-    @font-face {
-        font-family: Changa;
-        font-weight: 900;
-        src: url(/static/fonts/Changa-ExtraBold.ttf);
-    }
 }
 
 @layer components {
@@ -332,6 +300,38 @@
     .my-react-select-container .my-react-select__single-value {
         @apply text-neutral-600 dark:text-neutral-200;
     }
+}
+
+/* Typography */
+@font-face {
+    font-family: Changa;
+    font-weight: 400;
+    src: url(/static/fonts/Changa-ExtraLight.ttf);
+}
+@font-face {
+    font-family: Changa;
+    font-weight: 500;
+    src: url(/static/fonts/Changa-Light.ttf);
+}
+@font-face {
+    font-family: Changa;
+    font-weight: 600;
+    src: url(/static/fonts/Changa-Regular.ttf);
+}
+@font-face {
+    font-family: Changa;
+    font-weight: 700;
+    src: url(/static/fonts/Changa-Medium.ttf);
+}
+@font-face {
+    font-family: Changa;
+    font-weight: 800;
+    src: url(/static/fonts/Changa-Bold.ttf);
+}
+@font-face {
+    font-family: Changa;
+    font-weight: 900;
+    src: url(/static/fonts/Changa-ExtraBold.ttf);
 }
 
 /* NProgress Styles */
@@ -419,8 +419,8 @@
 /* Toastify Styles */
 :root {
     --toastify-color-light: #fff;
-    --toastify-color-dark: #121212;
-    --toastify-color-info: #3498db;
+    --toastify-color-dark: #0d1117;
+    --toastify-color-info: #1ea3a6;
     --toastify-color-success: #07bc0c;
     --toastify-color-warning: #f1c40f;
     --toastify-color-error: #e74c3c;
@@ -433,7 +433,7 @@
     --toastify-toast-background: #fff;
     --toastify-toast-min-height: 64px;
     --toastify-toast-max-height: 800px;
-    --toastify-font-family: sans-serif;
+    --toastify-font-family: 'Changa' sans-serif;
     --toastify-z-index: 9999;
     --toastify-text-color-light: #757575;
     --toastify-text-color-dark: #fff;

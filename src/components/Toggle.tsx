@@ -16,7 +16,7 @@ export function Toggle(props: IToggleProps) {
             />
             <label
                 htmlFor="toggle"
-                className="toggle-label block overflow-hidden h-7 rounded-full bg-disabled cursor-pointer"
+                className="toggle-label block overflow-hidden h-7 rounded-full bg-shade cursor-pointer"
             />
         </div>
     ) : (
@@ -30,7 +30,7 @@ export function Toggle(props: IToggleProps) {
             />
             <label
                 htmlFor="toggle"
-                className="toggle-label block overflow-hidden h-7 rounded-full bg-disabled cursor-pointer"
+                className="toggle-label block overflow-hidden h-7 rounded-full bg-shade cursor-pointer"
             />
         </div>
     )

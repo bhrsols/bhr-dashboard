@@ -7,6 +7,7 @@ import {
     MdGroups,
     MdOutlineReceiptLong,
 } from 'react-icons/md'
+import { toast } from 'react-toastify'
 import { setOpenSettings, useAppDispatch, useAppSelector } from 'src/app'
 import { SidebarMenu, SidebarNav, SidebarTitle } from 'src/components'
 import { NavItem, SidebarMenuItem } from 'types'
@@ -36,11 +37,11 @@ export function AppMenu(props: any) {
 
     const sidebarMenuitems: Array<SidebarMenuItem> = [
         {
-            onClick: () => console.log('you logged out.'),
+            onClick: () => toast.info(t.LOGGED_OUT),
             name: t.LOG_OUT,
         },
         {
-            onClick: () => console.log('you asked for help.'),
+            onClick: () => toast.info(t.ASKED_HELP),
             name: t.HELP,
         },
     ]
@@ -66,7 +67,7 @@ export function AppMenu(props: any) {
                         <div className="cursor-pointer">
                             <Link href="/">
                                 <img
-                                    alt="NTIS Logo"
+                                    alt="Bhr Logo"
                                     src={
                                         theme === 'dark'
                                             ? '/static/logo-txt-dark.png'

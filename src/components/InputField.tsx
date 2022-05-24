@@ -1,95 +1,65 @@
 import { InputFieldProps } from 'types'
 import { useState } from 'react'
 import { HiEye, HiEyeOff } from 'react-icons/hi'
+import { useAppSelector } from 'src/app'
 
 export const InputField = (props: InputFieldProps) => {
+    const { dir } = useAppSelector(state => state.ui)
     const [showField, setShowField] = useState(false)
 
     return (
         <>
             <div
-                dir={props.ltr ? 'ltr' : ''}
-                className={`flex flex-col my-2 justify-center ${
+                className={`flex flex-col my-2 justify-center 
+                ${
                     props.width === 'small'
                         ? 'w-48'
                         : props.width === 'medium'
                         ? 'w-64'
                         : props.width === 'large'
                         ? 'w-96'
-                        : props.width === 'full'
-                        ? 'w-full'
                         : 'w-auto'
                 }`}
             >
-                {props.label && (
-                    <p
-                        className={`text-gray-700 dark:text-gray-300 text-sm md:text-md my-2 mt-2`}
-                    >
-                        {props.label}
-                    </p>
-                )}
-
-                <div className="flex relative justify-center items-center rounded-md border border-gray-300 dark:border-gray-700">
+                <div className="flex relative justify-center items-center rounded-md border bg-disabled dark:bg-darkbg border-gentle dark:border-opacity-10">
                     <span
-                        className={`inline-flex  items-center px-3  ${
-                            props.disabled ? 'h-full' : ''
-                        }   text-gray-500 dark:text-gray-300 text-sm`}
+                        className={`px-3 ${
+                            dir === 'rtl' ? 'border-l' : 'border-r'
+                        } border-shade dark:border-gentle`}
                     >
                         {props.fieldIcon && <props.fieldIcon size={20} />}
                     </span>
-                    {props.type === 'textarea' ? (
-                        <textarea
-                            autoFocus={props.autoFocus}
-                            disabled={props.disabled}
-                            placeholder={props.placeholder}
-                            onChange={props.onChange}
-                            onKeyDown={props.onKeyDown}
-                            value={props.value ?? ''}
-                            onBlur={props.onBlur}
-                            className={`flex-1 appearance-none w-full py-1.5 px-4 border-0
-        ${
-            props.disabled
-                ? 'bg-gray-200 dark:bg-dark_primary dark:bg-opacity-30 text-gray-700 dark:text-gray-300 text-opacity-50 dark:text-opacity-50'
-                : 'bg-field dark:bg-dark_primary text-gray-700 dark:text-gray-300 placeholder-gray-400'
-        }
-        shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-accent dark:focus:ring-primary focus:border-transparent transition duration-200`}
-                        />
-                    ) : (
-                        <input
-                            autoFocus={props.autoFocus}
-                            defaultValue={props.defaultValue}
-                            required={props.required}
-                            disabled={props.disabled}
-                            type={showField ? 'text' : props.type}
-                            placeholder={props.placeholder}
-                            onChange={props.onChange}
-                            onKeyDown={props.onKeyDown}
-                            value={props.value ?? ''}
-                            onBlur={props.onBlur}
-                            className={`flex-1 appearance-none w-full h-10 py-1.5 px-4 border-0
-        ${
-            props.disabled
-                ? 'bg-gray-200 dark:bg-dark_primary dark:bg-opacity-30 text-gray-700 dark:text-gray-300 text-opacity-50 dark:text-opacity-50'
-                : 'bg-field dark:bg-dark_primary text-gray-700 dark:text-gray-300 placeholder-gray-400'
-        }
-        shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-accent dark:focus:ring-primary rtl:rounded-tl rtl:rounded-bl ltr:rounded-tr ltr:rounded-br focus:border-transparent transition duration-200`}
-                        />
-                    )}
+
+                    <input
+                        autoFocus={props.autoFocus}
+                        defaultValue={props.defaultValue}
+                        required={props.required}
+                        disabled={props.disabled}
+                        type={showField ? 'text' : props.type}
+                        placeholder={props.placeholder}
+                        onChange={props.onChange}
+                        onKeyDown={props.onKeyDown}
+                        value={props.value ?? ''}
+                        onBlur={props.onBlur}
+                        className={`flex-1 appearance-none w-full h-10 py-1.5 px-4 border-0
+                        ${
+                            props.disabled
+                                ? 'bg-shade dark:bg-darkfg bg-opacity-30 text-shade'
+                                : 'bg-disabled text-secondary dark:bg-darkbg dark:text-lightbg placeholder-disabled'
+                        } shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary rtl:rounded-tl rtl:rounded-bl ltr:rounded-tr ltr:rounded-br focus:border-transparent transition duration-200`}
+                    />
+
                     {props.type === 'password' && (
                         <div
-                            className="absolute top-2 right-3 text-gray-500 dark:text-gray-300 cursor-pointer select-none"
+                            className={`absolute top-2 ${
+                                dir === 'rtl' ? 'left-3' : 'right-3'
+                            } hover:text-primary cursor-pointer select-none`}
                             onClick={() => setShowField(!showField)}
                         >
                             {showField ? (
-                                <HiEyeOff
-                                    className="animate-grow-light hover:opacity-60"
-                                    size={24}
-                                />
+                                <HiEyeOff size={24} />
                             ) : (
-                                <HiEye
-                                    className="animate-grow-light hover:opacity-60"
-                                    size={24}
-                                />
+                                <HiEye size={24} />
                             )}
                         </div>
                     )}

@@ -102,14 +102,12 @@ export interface InputFieldProps {
         | 'hidden'
         | 'textarea'
         | 'email'
-    width?: 'small' | 'medium' | 'large' | 'full'
-    label?: string
+    width?: 'small' | 'medium' | 'large'
     errorMessage?: string
     isInvalid?: any
     disabled?: boolean
     required?: boolean
     defaultValue?: string
-    ltr?: boolean
     autoFocus?: boolean
 }
 
@@ -179,4 +177,10 @@ export type AppLocale = {
     LOG_OUT: string
     LOG_IN: string
     HELP: string
+    SETTINGS_UPDATED: string
+    SETTINGS_RESET: string
+    DATA_CLEARED: string
+    LOGGED_OUT: string
+    ASKED_HELP: string
+    LOG_IN_TO_CONTINUE: string
 }

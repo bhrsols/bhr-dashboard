@@ -19,6 +19,12 @@ export const en: AppLocale = {
     LOG_OUT: 'Log out',
     LOG_IN: 'Log in',
     HELP: 'Help',
+    SETTINGS_UPDATED: 'Settings updated',
+    SETTINGS_RESET: 'Settings are back to default',
+    DATA_CLEARED: 'User data is cleared',
+    LOGGED_OUT: 'You logged out ✌️.',
+    ASKED_HELP: 'You asked for help 👀.',
+    LOG_IN_TO_CONTINUE: 'Log in to continue',
 }
 
 export const ar: AppLocale = {
@@ -40,4 +46,10 @@ export const ar: AppLocale = {
     LOG_OUT: 'تسجيل الخروج',
     LOG_IN: 'تسجيل الدخول',
     HELP: 'المساعدة',
+    SETTINGS_UPDATED: 'تم تحديث الإعدادات',
+    SETTINGS_RESET: 'تم إعادة تعيين الإعدادات',
+    DATA_CLEARED: 'تم حذف بيانات المستخدم',
+    LOGGED_OUT: 'تم تسجيل الخروج ✌️.',
+    ASKED_HELP: 'تم طلب المساعدة 👀.',
+    LOG_IN_TO_CONTINUE: 'سجل دخول للمتابعة',
 }

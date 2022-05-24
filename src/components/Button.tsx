@@ -18,7 +18,7 @@ export const Button = (props: IButtonProps) => {
                     : 'bg-gradient-to-r from-primary to-blend hover:from-blend hover:to-primary'
             } ${classes}`}
         >
-            <p>{text.toUpperCase()}</p>
+            <p className="uppercase">{text}</p>
         </div>
     )
 }
