@@ -109,6 +109,7 @@ export interface InputFieldProps {
     required?: boolean
     defaultValue?: string
     autoFocus?: boolean
+    dir?: string
 }
 
 export interface IButtonProps {

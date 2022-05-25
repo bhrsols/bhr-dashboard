@@ -9,7 +9,7 @@ export function AppLogin() {
     return (
         <div className="flex h-screen justify-center items-center">
             <div
-                className={`overflow-hidden flex flex-row-reverse w-11/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-disabled dark:bg-darkbg rounded-xl shadow-md dark:shadow-2xl border-r border border-gentle border-opacity-10 animate-grow`}
+                className={`overflow-hidden flex flex-row-reverse w-11/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
             >
                 <div className="hidden lg:flex justify-center items-center lg:w-1/2 m-auto">
                     <a href="https://bhr.sa" target="_blank" rel="noreferrer">
@@ -27,7 +27,7 @@ export function AppLogin() {
                     </a>
                 </div>
 
-                <div className="w-full px-8 py-16 lg:w-1/2 bg-gentle dark:bg-darkfg text-center">
+                <div className="w-full px-8 py-16 lg:w-1/2 bg-lightfg dark:bg-darkfg text-center">
                     <h4>{t.LOG_IN_TO_CONTINUE}</h4>
 
                     <div className="my-6 flex items-center justify-between">
@@ -43,6 +43,7 @@ export function AppLogin() {
                             placeholder="Email"
                             value={'email'}
                             type="email"
+                            dir="ltr"
                         />
 
                         <InputField
@@ -51,6 +52,7 @@ export function AppLogin() {
                             placeholder={'Password'}
                             value={'password'}
                             type="password"
+                            dir="ltr"
                         />
                     </div>
 

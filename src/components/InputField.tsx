@@ -10,6 +10,7 @@ export const InputField = (props: InputFieldProps) => {
     return (
         <>
             <div
+                dir={props.dir}
                 className={`flex flex-col my-2 justify-center 
                 ${
                     props.width === 'small'
@@ -21,11 +22,9 @@ export const InputField = (props: InputFieldProps) => {
                         : 'w-auto'
                 }`}
             >
-                <div className="flex relative justify-center items-center rounded-md border bg-disabled dark:bg-darkbg border-gentle dark:border-opacity-10">
+                <div className="flex relative justify-center items-center rounded-md border bg-lightbg dark:bg-darkbg border-disabled dark:border-opacity-10">
                     <span
-                        className={`px-3 ${
-                            dir === 'rtl' ? 'border-l' : 'border-r'
-                        } border-shade dark:border-gentle`}
+                        className={`px-3 border-r border-shade dark:border-gentle`}
                     >
                         {props.fieldIcon && <props.fieldIcon size={20} />}
                     </span>
@@ -44,16 +43,14 @@ export const InputField = (props: InputFieldProps) => {
                         className={`flex-1 appearance-none w-full h-10 py-1.5 px-4 border-0
                         ${
                             props.disabled
-                                ? 'bg-shade dark:bg-darkfg bg-opacity-30 text-shade'
-                                : 'bg-disabled text-secondary dark:bg-darkbg dark:text-lightbg placeholder-disabled'
+                                ? 'bg-disabled dark:bg-darkfg bg-opacity-30 text-shade'
+                                : 'bg-ligthbg text-secondary dark:bg-darkbg dark:text-lightbg placeholder-disabled'
                         } shadow-sm text-base focus:outline-none focus:ring-1 focus:ring-primary dark:focus:ring-primary rtl:rounded-tl rtl:rounded-bl ltr:rounded-tr ltr:rounded-br focus:border-transparent transition duration-200`}
                     />
 
                     {props.type === 'password' && (
                         <div
-                            className={`absolute top-2 ${
-                                dir === 'rtl' ? 'left-3' : 'right-3'
-                            } hover:text-primary cursor-pointer select-none`}
+                            className={`absolute top-2 right-3 hover:text-primary cursor-pointer select-none`}
                             onClick={() => setShowField(!showField)}
                         >
                             {showField ? (

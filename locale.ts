@@ -16,15 +16,15 @@ export const en: AppLocale = {
     OVERVIEW: 'Overview',
     CLIENTS: 'Clients',
     RECEIPTS: 'Receipts',
-    LOG_OUT: 'Log out',
-    LOG_IN: 'Log in',
+    LOG_OUT: 'Logout',
+    LOG_IN: 'Login',
     HELP: 'Help',
     SETTINGS_UPDATED: 'Settings updated',
     SETTINGS_RESET: 'Settings are back to default',
     DATA_CLEARED: 'User data is cleared',
     LOGGED_OUT: 'You logged out ✌️.',
     ASKED_HELP: 'You asked for help 👀.',
-    LOG_IN_TO_CONTINUE: 'Log in to continue',
+    LOG_IN_TO_CONTINUE: 'Login to continue',
 }
 
 export const ar: AppLocale = {
