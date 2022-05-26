@@ -1,3 +1,6 @@
+import { ar, en } from 'locale'
+import { LOCALE } from 'types'
+
 export function saveLocalStorage(key: string, data: any): void {
     localStorage.setItem(key, JSON.stringify(data))
 }
@@ -22,7 +25,7 @@ export function clearStorage() {
     localStorage.clear()
 }
 
-export function setCookie(key: string, value: string, days: number) {
+export function setCookie(key: string, value: any, days: number) {
     var expires = ''
     if (days) {
         var date = new Date()
@@ -48,7 +51,11 @@ export function delCookie(key: string) {
 }
 
 export function clearCookies() {
-    document.cookie = ''
+    document.cookie.split(';').forEach(function (c) {
+        document.cookie = c
+            .replace(/^ +/, '')
+            .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/')
+    })
 }
 
 export function clearStorageAndCookies() {
@@ -84,4 +91,19 @@ export function generateUUID() {
             return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16)
         }
     )
+}
+
+export function getCurrentLocale() {
+    const currentLocale = window.document.documentElement.lang
+
+    switch (currentLocale) {
+        case LOCALE.EN:
+            return {
+                t: en,
+            }
+        default:
+            return {
+                t: ar,
+            }
+    }
 }

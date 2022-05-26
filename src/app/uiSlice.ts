@@ -6,10 +6,10 @@ import { ar, en } from 'locale'
 const initialState = {
     initializing: true,
     appInitialized: false,
-    theme: 'light',
-    locale: LOCALE.AR,
-    t: ar,
-    dir: 'rtl',
+    theme: 'dark',
+    locale: LOCALE.EN,
+    t: en,
+    dir: 'ltr',
     openSettings: false,
 } as UIState
 

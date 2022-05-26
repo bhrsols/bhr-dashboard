@@ -8,7 +8,12 @@ import {
     MdOutlineReceiptLong,
 } from 'react-icons/md'
 import { toast } from 'react-toastify'
-import { setOpenSettings, useAppDispatch, useAppSelector } from 'src/app'
+import {
+    setOpenSettings,
+    useAppDispatch,
+    useAppSelector,
+    logout,
+} from 'src/app'
 import { SidebarMenu, SidebarNav, SidebarTitle } from 'src/components'
 import { NavItem, SidebarMenuItem } from 'types'
 
@@ -37,12 +42,15 @@ export function AppMenu(props: any) {
 
     const sidebarMenuitems: Array<SidebarMenuItem> = [
         {
-            onClick: () => toast.info(t.LOGGED_OUT),
-            name: t.LOG_OUT,
-        },
-        {
             onClick: () => toast.info(t.ASKED_HELP),
             name: t.HELP,
+        },
+        {
+            onClick: () => {
+                dispatch(logout())
+                toast.info(t.LOGGED_OUT)
+            },
+            name: t.LOG_OUT,
         },
     ]
 

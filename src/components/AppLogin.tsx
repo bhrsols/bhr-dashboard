@@ -2,17 +2,41 @@ import { FiMail } from 'react-icons/fi'
 import { RiLockPasswordLine } from 'react-icons/ri'
 import { InputField } from './InputField'
 import { Button } from './Button'
-import { useAppSelector } from 'src/app'
+import { useAppDispatch, useAppSelector, login } from 'src/app'
+import { useState } from 'react'
 
 export function AppLogin() {
-    const { theme, t } = useAppSelector(state => state.ui)
+    const dispatch = useAppDispatch()
+    const { ui, properties } = useAppSelector(state => state)
+    const { propertiesLoading } = properties
+    const { theme, t } = ui
+    const [email, setEmail] = useState('info@bhr.sa')
+    const [password, setPassword] = useState('$RA+Ra5.&Xq8nQB')
+
+    const handleLogin = () => {
+        dispatch(
+            login({
+                email,
+                password,
+            })
+        )
+    }
+
     return (
-        <div className="flex h-screen justify-center items-center">
+        <div className="relative h-screen flex justify-center items-center">
+            <div className="absolute top-16">
+                <p>{t.COMPANY_NAME}</p>
+            </div>
+
             <div
-                className={`overflow-hidden flex flex-row-reverse w-11/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
+                className={`overflow-hidden flex flex-row-reverse w-10/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
             >
                 <div className="hidden lg:flex justify-center items-center lg:w-1/2 m-auto">
-                    <a href="https://bhr.sa" target="_blank" rel="noreferrer">
+                    <a
+                        href={t.COMPANY_WEBSITE}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img
                             alt="Bhr Logo"
                             src={
@@ -28,41 +52,43 @@ export function AppLogin() {
                 </div>
 
                 <div className="w-full px-8 py-16 lg:w-1/2 bg-lightfg dark:bg-darkfg text-center">
-                    <h4>{t.LOG_IN_TO_CONTINUE}</h4>
-
-                    <div className="my-6 flex items-center justify-between">
-                        <span className="border-b w-14 md:w-32"></span>
-                        <p className="uppercase">{t.APP_TITLE}</p>
-                        <span className="border-b w-14 md:w-32"></span>
+                    <div className="mb-12">
+                        <h4>{t.APP_TITLE}</h4>
                     </div>
 
-                    <div className="my-6">
+                    <div className="my-8">
                         <InputField
                             required
                             fieldIcon={FiMail}
-                            placeholder="Email"
-                            value={'email'}
                             type="email"
                             dir="ltr"
+                            placeholder="Email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                         />
 
                         <InputField
                             required
                             fieldIcon={RiLockPasswordLine}
-                            placeholder={'Password'}
-                            value={'password'}
                             type="password"
                             dir="ltr"
+                            placeholder="Password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
                     </div>
 
                     <Button
                         text={t.LOG_IN}
-                        loading={false}
-                        disabled={false}
-                        onClick={() => null}
+                        loading={propertiesLoading}
+                        onClick={handleLogin}
                     />
                 </div>
+            </div>
+            <div className="absolute bottom-8 hover:text-primary onclick-push">
+                <a href={t.COMPANY_WEBSITE} target="_blank" rel="noreferrer">
+                    <p>{t.BHR_CR}</p>
+                </a>
             </div>
         </div>
     )

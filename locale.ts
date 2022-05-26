@@ -22,9 +22,16 @@ export const en: AppLocale = {
     SETTINGS_UPDATED: 'Settings updated',
     SETTINGS_RESET: 'Settings are back to default',
     DATA_CLEARED: 'User data is cleared',
-    LOGGED_OUT: 'You logged out ✌️.',
+    LOGGED_OUT: 'See you soon ✌️.',
     ASKED_HELP: 'You asked for help 👀.',
     LOG_IN_TO_CONTINUE: 'Login to continue',
+    LOGIN_FAILED: 'Failed to login',
+    GREET_USER: 'Hello there,',
+    HAND_WAVING: '👋',
+    DELETE_ALL: 'Delete All',
+    BHR_CR: '2022 © Bhr',
+    COMPANY_WEBSITE: 'https://bhr.sa',
+    COMPANY_NAME: 'Bhr | بحر',
 }
 
 export const ar: AppLocale = {
@@ -37,6 +44,7 @@ export const ar: AppLocale = {
     RESET: 'إعادة تعيين',
     CLEAR_DATA: 'حذف البيانات',
     DELETE: 'حذف',
+    DELETE_ALL: 'حذف الكل',
     NOT_FOUND: 'العنصر غير موجود',
     NUM_404: '٤٠٤',
     BACK_HOME: 'العودة للرئيسية',
@@ -49,7 +57,13 @@ export const ar: AppLocale = {
     SETTINGS_UPDATED: 'تم تحديث الإعدادات',
     SETTINGS_RESET: 'تم إعادة تعيين الإعدادات',
     DATA_CLEARED: 'تم حذف بيانات المستخدم',
-    LOGGED_OUT: 'تم تسجيل الخروج ✌️.',
+    LOGGED_OUT: 'نراك قريبا ✌️.',
     ASKED_HELP: 'تم طلب المساعدة 👀.',
     LOG_IN_TO_CONTINUE: 'سجل دخول للمتابعة',
+    LOGIN_FAILED: 'فشل تسجيل الدخول',
+    GREET_USER: 'أهلًا وسهلًا,',
+    HAND_WAVING: '👋',
+    BHR_CR: '٢٠٢٢ © بحر',
+    COMPANY_WEBSITE: 'https://bhr.sa',
+    COMPANY_NAME: 'Bhr | بحر',
 }

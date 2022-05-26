@@ -23,7 +23,7 @@ module.exports = {
                 orange: '#ff8e36',
                 pinky: '#ff7fbf',
                 watermelon: '#ff0075',
-                shade: '#9ca3af',
+                shade: '#c2c7cf',
                 green: '#07bc0c',
             },
         },

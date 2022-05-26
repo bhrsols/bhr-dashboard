@@ -59,8 +59,13 @@
         min-width: 7rem;
     }
 
-    .min-w-9 {
-        min-width: 9rem;
+    .min-w-10 {
+        min-width: 10rem;
+    }
+
+    .btn-spinner {
+        font-size: 1.25rem;
+        line-height: 40rem;
     }
 
     /* Backgrounds and Colors */
@@ -71,7 +76,6 @@
     /* Toggle ltr styles */
     .toggle-checkbox-left {
         @apply border-4 border-shade cursor-pointer;
-        animation: slide-left ease 0.3s;
     }
 
     .toggle-checkbox-left:checked {
@@ -82,7 +86,6 @@
     /* Toggle rtl styles */
     .toggle-checkbox-right {
         @apply border-4 border-shade cursor-pointer;
-        animation: slide-right ease 0.3s;
     }
 
     .toggle-checkbox-right:checked {
@@ -273,7 +276,7 @@
     /* .my-react-select-container {
     } */
     .my-react-select-container .my-react-select__control {
-        @apply bg-lightfg dark:bg-darkbg border-2 border-disabled hover:border-disabled dark:border-warm hover:dark:border-warmer min-w-9 cursor-pointer;
+        @apply bg-lightfg dark:bg-darkbg border-2 border-disabled hover:border-disabled dark:border-warm hover:dark:border-warmer min-w-10 cursor-pointer;
     }
 
     .my-react-select-container .my-react-select__control--is-focused {

@@ -7,6 +7,7 @@ import {
     initApp,
     setOpenSettings,
     setInitializing,
+    isLoggedIn,
 } from 'src/app'
 import {
     AppLogin,
@@ -18,11 +19,14 @@ import {
 
 export function AppLayout(props: any) {
     const dispatch = useAppDispatch()
-    const { ui } = useAppSelector(state => state)
     const { children } = props
+    const { ui, properties } = useAppSelector(state => state)
+    const { user } = properties
     const { t, dir, theme, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
+        dispatch(isLoggedIn())
+
         if (!appInitialized) {
             dispatch(initApp())
         }
@@ -62,7 +66,7 @@ export function AppLayout(props: any) {
                 <AppSettings />
             </AppModal>
 
-            {false ? <AppMenu>{children}</AppMenu> : <AppLogin />}
+            {user ? <AppMenu>{children}</AppMenu> : <AppLogin />}
         </div>
     )
 }

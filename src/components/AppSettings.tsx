@@ -22,9 +22,11 @@ import {
 import { LOCALE, ReactSelectOption } from 'types'
 import { clearStorageAndCookies } from 'helpers'
 import { toast } from 'react-toastify'
+import { useRouter } from 'next/router'
 
 export function AppSettings() {
     const dispatch = useAppDispatch()
+    const router = useRouter()
     const { t, dir, locale, theme } = useAppSelector(state => state.ui)
 
     const localeOptions = [
@@ -50,6 +52,7 @@ export function AppSettings() {
 
     const handleClearData = () => {
         clearStorageAndCookies()
+        router.reload()
         toast.info(t.DATA_CLEARED)
     }
 
@@ -88,7 +91,7 @@ export function AppSettings() {
                 icon={<MdDelete size={24} />}
                 btn={
                     <Button
-                        text={t.DELETE}
+                        text={t.DELETE_ALL}
                         variant="danger"
                         onClick={handleClearData}
                     />

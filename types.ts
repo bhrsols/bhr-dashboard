@@ -1,5 +1,44 @@
 import { ReactElement } from 'react'
 
+export type LoginDto = {
+    email: string
+    password: string
+}
+
+export type PropertiesState = {
+    user: User | null
+    propertiesLoading: boolean
+}
+
+export type GEO = {
+    lat: string
+    lng: string
+}
+
+export type Address = {
+    street: string
+    suite: string
+    city: string
+    zipcode: string
+    geo: GEO
+}
+
+export type Company = {
+    name: string
+    catchPhrase: string
+    bs: string
+}
+export type User = {
+    id: number
+    name: string
+    username: string
+    email: string
+    address: Address
+    phone: string
+    website: string
+    company: Company
+}
+
 export type TestState = {
     msg: string
     user: any
@@ -169,6 +208,7 @@ export type AppLocale = {
     RESET: string
     CLEAR_DATA: string
     DELETE: string
+    DELETE_ALL: string
     NOT_FOUND: string
     NUM_404: string
     BACK_HOME: string
@@ -184,4 +224,10 @@ export type AppLocale = {
     LOGGED_OUT: string
     ASKED_HELP: string
     LOG_IN_TO_CONTINUE: string
+    LOGIN_FAILED: string
+    GREET_USER: string
+    HAND_WAVING: string
+    BHR_CR: string
+    COMPANY_WEBSITE: string
+    COMPANY_NAME: string
 }
