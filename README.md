@@ -26,7 +26,7 @@ Runs on http://localhost:3000.
 npm run dist
 ```
 
-Locate ./out — generated deployable static web app.
+Locate /out — generated deployable static web app.
 
 ## How To Deploy — Docker
 
