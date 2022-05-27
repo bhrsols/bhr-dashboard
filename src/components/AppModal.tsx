@@ -16,7 +16,7 @@ export function AppModal(props: IAppModalProps) {
             onClick={handleClick}
         >
             <div
-                className={`bg-lightfg dark:bg-darkfg shadow rounded w-10/12 md:w-2/4 overflow-y-auto animate-grow`}
+                className={`bg-lightfg dark:bg-darkfg shadow rounded w-11/12 md:w-2/4 overflow-y-auto animate-grow`}
             >
                 {children}
             </div>

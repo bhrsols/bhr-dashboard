@@ -62,7 +62,7 @@ export function AppSettings() {
             dir={dir}
             onClick={e => e.stopPropagation()}
         >
-            <div className="flex justify-between items-center p-4 mb-4 border-b-2 border-gentle">
+            <div className="flex justify-between items-center p-4 mb-4 border-b border-shade border-opacity-40">
                 <h4>{t.SETTINGS}</h4>
                 <MdOutlineClose
                     size={36}
@@ -104,7 +104,7 @@ export function AppSettings() {
                 btn={
                     <Button
                         text={t.RESET}
-                        // variant="warning"
+                        variant="warning"
                         onClick={handleRestSettings}
                     />
                 }

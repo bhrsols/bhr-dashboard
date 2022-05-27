@@ -24,10 +24,6 @@ export function AppLogin() {
 
     return (
         <div className="relative h-screen flex justify-center items-center">
-            <div className="absolute top-16">
-                <p>{t.COMPANY_NAME}</p>
-            </div>
-
             <div
                 className={`overflow-hidden flex flex-row-reverse w-10/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
             >

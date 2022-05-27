@@ -52,6 +52,7 @@ export type UIState = {
     t: AppLocale
     dir: 'rtl' | 'ltr'
     openSettings: boolean
+    openMobileNav: boolean
 }
 
 export type NavItem = {
@@ -64,6 +65,7 @@ export type UIStateToSave = {
     theme: 'light' | 'dark'
     locale: LOCALE
     openSettings: boolean
+    openMobileNav: boolean
 }
 
 export type ReactSelectOption = {
@@ -160,6 +162,58 @@ export interface IButtonProps {
     variant?: 'danger' | 'warning'
 }
 
+export type AppLocale = {
+    APP_TITLE: string
+    SETTINGS: string
+    DARK_THEME: string
+    APP_LOCALE: string
+    SELECT_LOCALE: string
+    RESET_SETTINGS: string
+    RESET: string
+    CLEAR_DATA: string
+    DELETE: string
+    DELETE_ALL: string
+    NOT_FOUND: string
+    NUM_404: string
+    BACK_HOME: string
+    OVERVIEW: string
+    CLIENTS: string
+    RECEIPTS: string
+    LOG_OUT: string
+    LOG_IN: string
+    HELP: string
+    SETTINGS_UPDATED: string
+    SETTINGS_RESET: string
+    DATA_CLEARED: string
+    LOGGED_OUT: string
+    ASKED_HELP: string
+    LOG_IN_TO_CONTINUE: string
+    LOGIN_FAILED: string
+    GREET_USER: string
+    HAND_WAVING: string
+    BHR_CR: string
+    COMPANY_WEBSITE: string
+    COMPANY_NAME: string
+    BANK: string
+    GALLERY: string
+    DATA: string
+    JUDGEMENTS: string
+    INQUIRIES: string
+    POWER: string
+    CHATS: string
+    DOCUMENTS: string
+    ORDERS: string
+    TRANSFERS: string
+    CENTER: string
+    FINGERPRINTS: string
+    TERMINATED: string
+    SECURITY: string
+    REGIONS: string
+    RECYCLE: string
+    ORGANIZATION: string
+    GRANTS: string
+}
+
 export enum HTTPResponse {
     OK = 200,
     CREATED = 201,
@@ -198,36 +252,6 @@ export enum LOCALE {
     AR = 'عربي',
 }
 
-export type AppLocale = {
-    APP_TITLE: string
-    SETTINGS: string
-    DARK_THEME: string
-    APP_LOCALE: string
-    SELECT_LOCALE: string
-    RESET_SETTINGS: string
-    RESET: string
-    CLEAR_DATA: string
-    DELETE: string
-    DELETE_ALL: string
-    NOT_FOUND: string
-    NUM_404: string
-    BACK_HOME: string
-    OVERVIEW: string
-    CLIENTS: string
-    RECEIPTS: string
-    LOG_OUT: string
-    LOG_IN: string
-    HELP: string
-    SETTINGS_UPDATED: string
-    SETTINGS_RESET: string
-    DATA_CLEARED: string
-    LOGGED_OUT: string
-    ASKED_HELP: string
-    LOG_IN_TO_CONTINUE: string
-    LOGIN_FAILED: string
-    GREET_USER: string
-    HAND_WAVING: string
-    BHR_CR: string
-    COMPANY_WEBSITE: string
-    COMPANY_NAME: string
+export enum SCREENS {
+    DESKTOP_MIN_WIDTH = 1366,
 }

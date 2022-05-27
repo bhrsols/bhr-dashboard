@@ -9,7 +9,7 @@ export const Button = (props: IButtonProps) => {
             onClick={e => {
                 if (!disabled && !loading && onClick) onClick(e)
             }}
-            className={`min-w-10 flex justify-center items-center font-bold text-white rounded-md shadow py-1 px-4 select-none uppercase
+            className={`min-w-10 flex justify-center items-center font-bold text-white rounded-md shadow py-1 px-3 select-none uppercase text-xs md:text-sm
             ${
                 disabled || loading
                     ? 'bg-darkbg bg-opacity-40 dark:bg-shade dark:bg-opacity-40'

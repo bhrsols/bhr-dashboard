@@ -1,8 +1,12 @@
 import { ar, en } from 'locale'
 import { LOCALE } from 'types'
 
-export function saveLocalStorage(key: string, data: any): void {
+export function saveLocalStorage(key: string, data: any) {
     localStorage.setItem(key, JSON.stringify(data))
+}
+
+export function delLocalStorageByKey(key: string) {
+    localStorage.removeItem(key)
 }
 
 export function getLocalStorageByKey(key: string) {
@@ -15,7 +19,7 @@ export function getAllStorage() {
         i = keys.length
 
     while (i--) {
-        values.push(localStorage.getItem(keys[i]))
+        values.push(JSON.parse(localStorage.getItem(keys[i]) || ''))
     }
 
     return values
@@ -32,7 +36,8 @@ export function setCookie(key: string, value: any, days: number) {
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
         expires = '; expires=' + date.toUTCString()
     }
-    document.cookie = key + '=' + (value || '') + expires + '; path=/'
+    document.cookie =
+        key + '=' + (JSON.stringify(value) || '') + expires + '; path=/'
 }
 
 export function getCookie(key: string) {

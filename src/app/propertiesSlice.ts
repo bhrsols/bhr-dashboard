@@ -1,13 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import {
     delCookie,
+    delLocalStorageByKey,
     getCookie,
     getCurrentLocale,
+    getLocalStorageByKey,
+    saveLocalStorage,
     setCookie,
     sleep,
 } from 'helpers'
-import { REST, User, PropertiesState, LoginDto } from 'types'
-import { ar, en } from 'locale'
+import { REST, User, PropertiesState, LoginDto, AppLocale } from 'types'
 import { toast } from 'react-toastify'
 
 const initialState = {
@@ -20,17 +22,16 @@ export const propertiesSlice = createSlice({
     initialState,
     reducers: {
         logout: state => {
-            delCookie('jwt')
+            delCookie('access_token')
             state.user = null
         },
-        isLoggedIn: state => {
-            const jwt = getCookie('jwt')
 
-            if (jwt) {
-                state.user = JSON.parse(jwt)
-            } else {
-                state.user = null
-            }
+        isLoggedIn: state => {
+            const jwt = getCookie('access_token')
+            const user = getLocalStorageByKey('user')
+
+            if (jwt && user) state.user = user
+            else state.user = null
         },
     },
     extraReducers: builder => {
@@ -39,7 +40,9 @@ export const propertiesSlice = createSlice({
             const { user } = action.payload
             state.user = user
 
-            setCookie('jwt', JSON.stringify(user), 7)
+            // Save user data to cookie and storage
+            setCookie('access_token', user, 7)
+            saveLocalStorage('user', user)
 
             // Greet user upon login
             const { t } = getCurrentLocale()
@@ -80,8 +83,7 @@ export const propertiesSlice = createSlice({
 
             // Display error message
             const { t } = getCurrentLocale()
-            //@ts-ignore
-            toast.error(t[`${localeKey}`])
+            toast.error(t[`${localeKey as keyof AppLocale}`])
 
             state.propertiesLoading = false
         })

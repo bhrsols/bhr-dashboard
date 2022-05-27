@@ -25,12 +25,15 @@ export function AppLayout(props: any) {
     const { t, dir, theme, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
-        dispatch(isLoggedIn())
-
+        // Loads saved state from storage if available
         if (!appInitialized) {
             dispatch(initApp())
         }
 
+        // Check if jwttoken is available
+        dispatch(isLoggedIn())
+
+        // Disable app loading screen after 1s
         if (initializing) {
             setTimeout(() => dispatch(setInitializing(false)), 1000)
         }

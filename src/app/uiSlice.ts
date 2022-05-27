@@ -11,6 +11,7 @@ const initialState = {
     t: en,
     dir: 'ltr',
     openSettings: false,
+    openMobileNav: false,
 } as UIState
 
 export const uiSlice = createSlice({
@@ -35,6 +36,7 @@ export const uiSlice = createSlice({
                 theme: state.theme,
                 locale: state.locale,
                 openSettings: state.openSettings,
+                openMobileNav: state.openMobileNav,
             }
 
             saveLocalStorage('ui', stateToSave)
@@ -70,6 +72,7 @@ export const uiSlice = createSlice({
                 theme: state.theme,
                 locale: state.locale,
                 openSettings: state.openSettings,
+                openMobileNav: state.openMobileNav,
             }
 
             saveLocalStorage('ui', stateToSave)
@@ -83,6 +86,21 @@ export const uiSlice = createSlice({
                 theme: state.theme,
                 locale: state.locale,
                 openSettings: state.openSettings,
+                openMobileNav: state.openMobileNav,
+            }
+
+            saveLocalStorage('ui', stateToSave)
+        },
+
+        // Open app mobile nav menu
+        setMobileNav: (state, action) => {
+            state.openMobileNav = action.payload
+
+            const stateToSave: UIStateToSave = {
+                theme: state.theme,
+                locale: state.locale,
+                openSettings: state.openSettings,
+                openMobileNav: state.openMobileNav,
             }
 
             saveLocalStorage('ui', stateToSave)
@@ -122,6 +140,7 @@ export const uiSlice = createSlice({
             }
 
             state.openSettings = uiState.openSettings
+            state.openMobileNav = uiState.openMobileNav
             state.appInitialized = true
         })
     },
@@ -136,7 +155,12 @@ export const initApp = createAsyncThunk('ui/initApp', async () => {
     }
 })
 
-export const { switchTheme, setInitializing, setLocale, setOpenSettings } =
-    uiSlice.actions
+export const {
+    switchTheme,
+    setInitializing,
+    setLocale,
+    setOpenSettings,
+    setMobileNav,
+} = uiSlice.actions
 
 export default uiSlice.reducer
