@@ -25,7 +25,7 @@ export function AppLogin() {
     return (
         <div className="relative h-screen flex justify-center items-center">
             <div
-                className={`overflow-hidden flex flex-row-reverse w-10/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
+                className={`overflow-hidden flex flex-row-reverse w-11/12 md:w-11/12 lg:w-4/5 xl:w-3/4 mx-auto max-w-sm lg:max-w-6xl bg-lightbg dark:bg-darkbg rounded-xl shadow-md border border-disabled dark:border-gentle dark:border-opacity-10 animate-grow`}
             >
                 <div className="hidden lg:flex justify-center items-center lg:w-1/2 m-auto">
                     <a
@@ -47,7 +47,7 @@ export function AppLogin() {
                     </a>
                 </div>
 
-                <div className="w-full px-8 py-16 lg:w-1/2 bg-lightfg dark:bg-darkfg text-center">
+                <div className="w-full px-4 md:px-8 py-16 lg:w-1/2 bg-lightfg dark:bg-darkfg text-center">
                     <div className="mb-12">
                         <h4>{t.APP_TITLE}</h4>
                     </div>
@@ -81,7 +81,7 @@ export function AppLogin() {
                     />
                 </div>
             </div>
-            <div className="absolute bottom-32 hover:text-primary onclick-push">
+            <div className="absolute bottom-16 hover:text-primary onclick-push">
                 <a href={t.COMPANY_WEBSITE} target="_blank" rel="noreferrer">
                     <p>{t.BHR_CR}</p>
                 </a>
