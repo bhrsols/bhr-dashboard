@@ -83,7 +83,6 @@
 
     .toggle-checkbox-left:checked {
         @apply right-0 border-4 border-primary;
-        animation: slide-right ease 0.3s;
     }
 
     /* Toggle rtl styles */
@@ -93,7 +92,6 @@
 
     .toggle-checkbox-right:checked {
         @apply left-0 border-4 border-primary;
-        animation: slide-left ease 0.3s;
     }
 
     .toggle-checkbox-right:checked + .toggle-label,
