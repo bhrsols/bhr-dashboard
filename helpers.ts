@@ -112,3 +112,10 @@ export function getCurrentLocale() {
             }
     }
 }
+
+export function isMobile() {
+    if (window) {
+        return window.matchMedia(`(max-width: 1366px)`).matches
+    }
+    return false
+}
