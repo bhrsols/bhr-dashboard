@@ -1,7 +1,7 @@
 # Bhr Dashboard Template
 
 ```bash
-git clone https://github.com/bhrsols/bhr-admin-dashboard.git
+git clone https://github.com/bhrsols/bhr-dashboard.git
 ```
 
 ```bash
