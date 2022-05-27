@@ -14,27 +14,27 @@ function MyApp({ Component, pageProps }: AppProps) {
 
                 <meta
                     name="description"
-                    content="description goes here in this very exact meta tag"
+                    content="General purpose responsive web and mobile dashboard"
                 />
 
                 <meta property="og:url" content="bhr.sa" />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content="Website Title" />
+                <meta property="og:title" content="Bhr Dashboard" />
                 <meta
                     property="og:description"
-                    content="description goes here in this very exact meta tag"
+                    content="General purpose responsive web and mobile dashboard"
                 />
-                <meta property="og:image" content="./static/main.png" />
+                <meta property="og:image" content="/static/main.png" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="bhr.sa" />
                 <meta property="twitter:url" content="https://bhr.sa" />
-                <meta name="twitter:title" content="Website Title" />
+                <meta name="twitter:title" content="Bhr Dashboard" />
                 <meta
                     name="twitter:description"
-                    content="description goes here in this very exact meta tag"
+                    content="General purpose responsive web and mobile dashboard"
                 />
-                <meta name="twitter:image" content="./static/main.png" />
+                <meta name="twitter:image" content="/static/main.png" />
             </Head>
             <AppLoading />
             <Component {...pageProps} />

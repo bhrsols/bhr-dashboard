@@ -10,7 +10,7 @@ export const SidebarMenu = (props: ISidebarMenuProps) => {
                         return (
                             <div
                                 key={item.name}
-                                className="hover:bg-disabled hover:dark:bg-darkfg cursor-pointer w-full rounded-md py-1 text-center select-none onclick-push uppercase"
+                                className="hover:bg-disabled hover:dark:bg-darkfg cursor-pointer w-full rounded-md py-1 text-center select-none onclick-push uppercase text-xs"
                                 onClick={() => item.onClick()}
                             >
                                 {item.name}

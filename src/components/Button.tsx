@@ -1,8 +1,11 @@
-import { IButtonProps } from 'types'
+import { IButtonProps, SCREENS } from 'types'
 import { ImSpinner10 } from 'react-icons/im'
+import { useWindowSize } from 'hooks'
 
 export const Button = (props: IButtonProps) => {
     const { onClick, classes, text, variant, disabled, loading } = props
+    const window = useWindowSize()
+    const isMobile = window.width < SCREENS.DESKTOP_MIN_WIDTH
 
     return (
         <div
@@ -21,7 +24,10 @@ export const Button = (props: IButtonProps) => {
             } ${classes}`}
         >
             {loading ? (
-                <ImSpinner10 className="animate-spin" size={20} />
+                <ImSpinner10
+                    className="animate-spin"
+                    size={isMobile ? 16 : 20}
+                />
             ) : (
                 text
             )}

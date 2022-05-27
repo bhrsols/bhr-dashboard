@@ -204,6 +204,7 @@ export function AppMenu(props: any) {
                 ${!openMobileNav && 'hidden'}`}
                 >
                     <SidebarNav navs={navs} />
+                    <SidebarMenu items={sidebarMenuitems} />
                 </aside>
             )}
 
