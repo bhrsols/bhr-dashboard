@@ -81,7 +81,7 @@ export function AppLogin() {
                     />
                 </div>
             </div>
-            <div className="absolute bottom-8 hover:text-primary onclick-push">
+            <div className="absolute bottom-32 hover:text-primary onclick-push">
                 <a href={t.COMPANY_WEBSITE} target="_blank" rel="noreferrer">
                     <p>{t.BHR_CR}</p>
                 </a>
