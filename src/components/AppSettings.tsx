@@ -65,8 +65,8 @@ export function AppSettings() {
             <div className="flex justify-between items-center p-4 mb-4 border-b border-shade border-opacity-40">
                 <h4>{t.SETTINGS}</h4>
                 <MdOutlineClose
-                    size={36}
-                    className="hover:cursor-pointer"
+                    size={24}
+                    className="hover:cursor-pointer onclick-push"
                     onClick={() => dispatch(setOpenSettings(false))}
                 />
             </div>

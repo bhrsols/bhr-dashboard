@@ -212,6 +212,7 @@ export type AppLocale = {
     RECYCLE: string
     ORGANIZATION: string
     GRANTS: string
+    HELLO_WORLD: string
 }
 
 export enum HTTPResponse {

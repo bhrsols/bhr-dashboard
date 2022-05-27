@@ -1,14 +1,17 @@
 {
-    "name": "next-template",
-    "version": "0.1.0",
+    "name": "bhr-dashboard",
+    "version": "1.0.0",
     "private": true,
     "author": "Bhr Engineering Team <info@bhr.sa>",
     "homepage": "https://bhr-admin-dashboard.vercel.app",
-    "description": "General purpose responsive admin dashboard",
+    "description": "General purpose responsive web and mobile dashboard",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "dist": "npm run build && next export",
+        "docker": "npm run dist && docker build . -t bhr-dashboard -f Dockerfile && docker save -o ./bhr-dashboard.tar bhr-dashboard",
+        "docker:run": "docker run -it -d -p 8080:80 bhr-dashboard"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.1",

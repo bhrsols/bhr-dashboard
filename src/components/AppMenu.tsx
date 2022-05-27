@@ -176,7 +176,7 @@ export function AppMenu(props: any) {
     }
 
     return (
-        <div className="flex h-screen">
+        <div className="flex h-screen w-screen">
             <div
                 className={`flex h-screen dark:bg-darkfg shadow-md border-shade border-opacity-40 ${
                     dir === 'rtl' ? 'border-l' : 'border-r'
@@ -207,7 +207,7 @@ export function AppMenu(props: any) {
                 </aside>
             )}
 
-            <div className="flex flex-col flex-1 w-full sticky">
+            <div className="w-full flex flex-col flex-1">
                 <header>
                     <nav className="h-24 px-4 flex items-center justify-between dark:bg-darkfg shadow-md border-b border-shade border-opacity-40">
                         <div className="cursor-pointer">
@@ -256,13 +256,13 @@ export function AppMenu(props: any) {
                 </header>
 
                 <main
-                    className="h-full overflow-y-auto overflow-x-hidden"
+                    className="w-full h-full overflow-y-auto overflow-x-hidden"
                     onClick={e => {
                         e.stopPropagation()
                         dispatch(setMobileNav(false))
                     }}
                 >
-                    <div className="h-full">{children}</div>
+                    {children}
                 </main>
             </div>
         </div>

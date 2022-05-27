@@ -1,7 +1,7 @@
 import { AppLocale } from 'types'
 
 export const en: AppLocale = {
-    APP_TITLE: 'Bhr Admin Dashboard',
+    APP_TITLE: 'Bhr Dashboard',
     SETTINGS: 'Settings',
     DARK_THEME: 'Dark',
     APP_LOCALE: 'Language',
@@ -50,6 +50,7 @@ export const en: AppLocale = {
     RECYCLE: 'Recycle',
     ORGANIZATION: 'Organization',
     GRANTS: 'Grants',
+    HELLO_WORLD: 'Hello world 👋.',
 }
 
 export const ar: AppLocale = {
@@ -102,4 +103,5 @@ export const ar: AppLocale = {
     RECYCLE: 'إعادة تدوير',
     ORGANIZATION: 'المنظمة',
     GRANTS: 'المنح',
+    HELLO_WORLD: 'مرحبًا بالعالم 👋.',
 }
