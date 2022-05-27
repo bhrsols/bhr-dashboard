@@ -45,6 +45,7 @@ export function AppLayout(props: any) {
                 dispatch(setIsMobile(true))
             else dispatch(setIsMobile(false))
         }
+        handleResize()
         window.addEventListener('resize', handleResize)
     }, [])
 
