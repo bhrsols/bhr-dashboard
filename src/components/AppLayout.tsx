@@ -8,6 +8,7 @@ import {
     setOpenSettings,
     setInitializing,
     isLoggedIn,
+    setIsMobile,
 } from 'src/app'
 import {
     AppLogin,
@@ -16,6 +17,7 @@ import {
     AppSettings,
     AppMenu,
 } from 'src/components'
+import { SCREENS } from 'types'
 
 export function AppLayout(props: any) {
     const dispatch = useAppDispatch()
@@ -37,6 +39,13 @@ export function AppLayout(props: any) {
         if (initializing) {
             setTimeout(() => dispatch(setInitializing(false)), 1500)
         }
+
+        const handleResize = () => {
+            if (window.innerWidth < SCREENS.DESKTOP_MIN_WIDTH)
+                dispatch(setIsMobile(true))
+            else dispatch(setIsMobile(false))
+        }
+        window.addEventListener('resize', handleResize)
     }, [])
 
     return (

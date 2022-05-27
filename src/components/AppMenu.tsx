@@ -36,12 +36,12 @@ import {
 } from 'src/app'
 import { SidebarMenu, SidebarNav, SidebarTitle } from 'src/components'
 import { NavItem, SidebarMenuItem } from 'types'
-import { isMobile } from 'helpers'
 
 export function AppMenu(props: any) {
     const dispatch = useAppDispatch()
-    const isMob = isMobile()
-    const { theme, t, dir, openMobileNav } = useAppSelector(state => state.ui)
+    const { isMobile, theme, t, dir, openMobileNav } = useAppSelector(
+        state => state.ui
+    )
     const { children } = props
 
     const navs: Array<NavItem> = [
@@ -181,7 +181,7 @@ export function AppMenu(props: any) {
                     dir === 'rtl' ? 'border-l' : 'border-r'
                 }`}
             >
-                {isMob ? null : (
+                {!isMobile && (
                     <aside className="w-80 shadow-md flex flex-col justify-start">
                         <SidebarTitle />
 
@@ -192,7 +192,7 @@ export function AppMenu(props: any) {
                 )}
             </div>
 
-            {isMob && (
+            {isMobile && (
                 <aside
                     className={`h-full w-3/4 absolute z-20 overflow-y-auto bg-lightbg dark:bg-darkfg shadow-lg border-shade border-opacity-40
                 ${
@@ -211,7 +211,7 @@ export function AppMenu(props: any) {
                 <header>
                     <nav className="h-24 px-4 flex items-center justify-between dark:bg-darkfg shadow-md border-b border-shade border-opacity-40">
                         <div className="cursor-pointer">
-                            {isMob ? (
+                            {isMobile ? (
                                 <div
                                     className="hover:text-primary cursor-pointer onclick-push"
                                     onClick={handleOpenMobileMenu}

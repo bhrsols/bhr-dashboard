@@ -12,6 +12,7 @@ const initialState = {
     dir: 'ltr',
     openSettings: false,
     openMobileNav: false,
+    isMobile: false,
 } as UIState
 
 export const uiSlice = createSlice({
@@ -105,6 +106,10 @@ export const uiSlice = createSlice({
 
             saveLocalStorage('ui', stateToSave)
         },
+
+        setIsMobile: (state, action) => {
+            state.isMobile = action.payload
+        },
     },
     extraReducers: builder => {
         // Initializes app
@@ -161,6 +166,7 @@ export const {
     setLocale,
     setOpenSettings,
     setMobileNav,
+    setIsMobile,
 } = uiSlice.actions
 
 export default uiSlice.reducer

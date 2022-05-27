@@ -53,6 +53,7 @@ export type UIState = {
     dir: 'rtl' | 'ltr'
     openSettings: boolean
     openMobileNav: boolean
+    isMobile: boolean
 }
 
 export type NavItem = {

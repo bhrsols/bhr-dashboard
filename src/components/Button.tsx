@@ -1,11 +1,10 @@
 import { IButtonProps, SCREENS } from 'types'
 import { ImSpinner10 } from 'react-icons/im'
-import { useWindowSize } from 'hooks'
+import { useAppSelector } from 'src/app'
 
 export const Button = (props: IButtonProps) => {
+    const { isMobile } = useAppSelector(state => state.ui)
     const { onClick, classes, text, variant, disabled, loading } = props
-    const window = useWindowSize()
-    const isMobile = window.width < SCREENS.DESKTOP_MIN_WIDTH
 
     return (
         <div
