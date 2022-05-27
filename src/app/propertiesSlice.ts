@@ -1,13 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import {
     delCookie,
-    delLocalStorageByKey,
     getCookie,
     getCurrentLocale,
     getLocalStorageByKey,
     saveLocalStorage,
     setCookie,
-    sleep,
 } from 'helpers'
 import { REST, User, PropertiesState, LoginDto, AppLocale } from 'types'
 import { toast } from 'react-toastify'

@@ -9,7 +9,7 @@ export const Button = (props: IButtonProps) => {
             onClick={e => {
                 if (!disabled && !loading && onClick) onClick(e)
             }}
-            className={`min-w-10 flex justify-center items-center font-bold text-white rounded-md shadow py-1 px-3 select-none uppercase text-xs md:text-sm
+            className={`min-w-10 flex justify-center items-center font-bold text-white rounded-md shadow py-2 px-3 select-none uppercase text-xs md:text-sm
             ${
                 disabled || loading
                     ? 'bg-darkbg bg-opacity-40 dark:bg-shade dark:bg-opacity-40'
@@ -20,7 +20,11 @@ export const Button = (props: IButtonProps) => {
                     : 'bg-gradient-to-r from-primary to-blend hover:from-blend hover:to-primary cursor-pointer onclick-push'
             } ${classes}`}
         >
-            {loading ? <ImSpinner10 className="animate-spin m-2" /> : text}
+            {loading ? (
+                <ImSpinner10 className="animate-spin" size={20} />
+            ) : (
+                text
+            )}
         </div>
     )
 }
