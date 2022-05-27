@@ -7,7 +7,7 @@ export const SidebarMenu = (props: ISidebarMenuProps) => {
     return (
         <div className="mt-auto mb-4 pt-4 border-t border-shade border-opacity-40 w-full flex justify-center items-center px-4">
             <div className="w-full bg-gentle dark:bg-darkbg p-5 rounded-xl flex justify-between items-center gap-6">
-                <div className="w-full flex flex-col justify-start items-start gap-1 text-sm">
+                <div className="w-full flex flex-col justify-start items-start gap-2 text-sm">
                     {items.map(item => {
                         return (
                             <div
