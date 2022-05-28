@@ -54,7 +54,7 @@ export type UIState = {
     openSettings: boolean
     openMobileNav: boolean
     isMobile: boolean
-    appVersion: string
+    version: string
 }
 
 export type NavItem = {

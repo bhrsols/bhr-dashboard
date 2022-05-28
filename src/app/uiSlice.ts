@@ -18,7 +18,7 @@ const initialState = {
     openSettings: false,
     openMobileNav: false,
     isMobile: false,
-    appVersion: '1.0.0',
+    version: '1.0.1',
 } as UIState
 
 export const uiSlice = createSlice({
@@ -118,13 +118,13 @@ export const uiSlice = createSlice({
         },
 
         validateAppVersion: state => {
-            const versionFromStorage = getLocalStorageByKey('appVersion')
+            const versionFromStorage = getLocalStorageByKey('version')
             const invalid =
-                !versionFromStorage || versionFromStorage !== state.appVersion
+                !versionFromStorage || versionFromStorage !== state.version
 
             if (invalid) {
                 clearStorageAndCookies()
-                saveLocalStorage('appVersion', state.appVersion)
+                saveLocalStorage('appVersion', state.version)
             }
         },
     },
