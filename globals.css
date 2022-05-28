@@ -70,6 +70,12 @@
     .min-h-24 {
         min-height: 6rem /* 96px */;
     }
+    .min-h-80-per {
+        min-height: 80%;
+    }
+    .min-h-90-per {
+        min-height: 90%;
+    }
 
     /* Backgrounds and Colors */
     .bg-overlay {

@@ -177,7 +177,7 @@ export function AppMenu(props: any) {
     return (
         <div className="flex h-screen w-screen">
             <div
-                className={`flex h-screen dark:bg-darkfg shadow-md border-shade border-opacity-40 ${
+                className={`flex h-full dark:bg-darkfg shadow-md border-shade border-opacity-40 ${
                     isMobile ? '' : dir === 'rtl' ? 'border-l' : 'border-r'
                 }`}
             >
@@ -194,7 +194,7 @@ export function AppMenu(props: any) {
 
             {isMobile && (
                 <aside
-                    className={`h-full w-3/4 absolute z-20 overflow-y-auto bg-lightbg dark:bg-darkfg shadow-lg border-shade border-opacity-40
+                    className={`h-full flex flex-col justify-start w-3/4 absolute z-20 overflow-y-auto bg-lightbg dark:bg-darkfg shadow-lg border-shade border-opacity-40
                 ${
                     dir === 'rtl'
                         ? 'left-0 border-r animate-slide-right'
