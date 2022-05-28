@@ -124,7 +124,7 @@ export const uiSlice = createSlice({
 
             if (invalid) {
                 clearStorageAndCookies()
-                saveLocalStorage('appVersion', state.version)
+                saveLocalStorage('version', state.version)
             }
         },
     },
