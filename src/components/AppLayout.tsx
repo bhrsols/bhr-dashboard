@@ -9,6 +9,7 @@ import {
     setInitializing,
     isLoggedIn,
     setIsMobile,
+    validateAppVersion,
 } from 'src/app'
 import {
     AppLogin,
@@ -27,6 +28,9 @@ export function AppLayout(props: any) {
     const { t, dir, theme, appInitialized, initializing, openSettings } = ui
 
     useEffect(() => {
+        // Check if app version is latest reset if not
+        dispatch(validateAppVersion())
+
         // Loads saved state from storage if available
         if (!appInitialized) {
             dispatch(initApp())

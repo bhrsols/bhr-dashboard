@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import {
     delCookie,
+    delLocalStorageByKey,
     getCookie,
     getCurrentLocale,
     getLocalStorageByKey,
@@ -21,6 +22,7 @@ export const propertiesSlice = createSlice({
     reducers: {
         logout: state => {
             delCookie('access_token')
+            delLocalStorageByKey('user')
             state.user = null
         },
 

@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { getLocalStorageByKey, saveLocalStorage, sleep } from 'helpers'
+import {
+    clearStorageAndCookies,
+    getLocalStorageByKey,
+    saveLocalStorage,
+    sleep,
+} from 'helpers'
 import { UIState, UIStateToSave, LOCALE } from 'types'
 import { ar, en } from 'locale'
 
@@ -13,6 +18,7 @@ const initialState = {
     openSettings: false,
     openMobileNav: false,
     isMobile: false,
+    appVersion: '1.0.0',
 } as UIState
 
 export const uiSlice = createSlice({
@@ -110,6 +116,17 @@ export const uiSlice = createSlice({
         setIsMobile: (state, action) => {
             state.isMobile = action.payload
         },
+
+        validateAppVersion: state => {
+            const versionFromStorage = getLocalStorageByKey('appVersion')
+            const invalid =
+                !versionFromStorage || versionFromStorage !== state.appVersion
+
+            if (invalid) {
+                clearStorageAndCookies()
+                saveLocalStorage('appVersion', state.appVersion)
+            }
+        },
     },
     extraReducers: builder => {
         // Initializes app
@@ -167,6 +184,7 @@ export const {
     setOpenSettings,
     setMobileNav,
     setIsMobile,
+    validateAppVersion,
 } = uiSlice.actions
 
 export default uiSlice.reducer
