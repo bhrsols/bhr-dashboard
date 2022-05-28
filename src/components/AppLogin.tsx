@@ -47,7 +47,7 @@ export function AppLogin() {
                     </a>
                 </div>
 
-                <div className="w-full px-4 md:px-8 py-16 lg:w-1/2 bg-lightfg dark:bg-darkfg text-center">
+                <div className="w-full px-4 md:px-8 py-16 lg:w-1/2 bg-gentle dark:bg-darkfg text-center">
                     <div className="mb-12">
                         <h4>{t.APP_TITLE}</h4>
                     </div>
