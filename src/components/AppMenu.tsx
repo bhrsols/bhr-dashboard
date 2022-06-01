@@ -177,7 +177,7 @@ export function AppMenu(props: any) {
     return (
         <div className="flex h-screen w-screen">
             <div
-                className={`flex h-full dark:bg-darkfg shadow-md border-shade border-opacity-40 ${
+                className={`flex h-full dark:bg-darkfg border-darkbg dark:border-shade border-opacity-0 dark:border-opacity-40 ${
                     isMobile ? '' : dir === 'rtl' ? 'border-l' : 'border-r'
                 }`}
             >
