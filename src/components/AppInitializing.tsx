@@ -14,7 +14,7 @@ export function AppInitializing() {
                     alt="Logo image"
                     draggable={false}
                     width={112}
-                    className="absolute ml-6"
+                    className="absolute"
                 />
                 <div className="gradient-spinner"></div>
             </div>

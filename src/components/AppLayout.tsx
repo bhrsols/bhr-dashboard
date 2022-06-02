@@ -41,7 +41,7 @@ export function AppLayout(props: any) {
 
         // Disable app loading screen after 1s
         if (initializing) {
-            setTimeout(() => dispatch(setInitializing(false)), 1500)
+            // setTimeout(() => dispatch(setInitializing(false)), 1500)
         }
 
         const handleResize = () => {

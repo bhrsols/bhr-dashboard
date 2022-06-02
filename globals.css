@@ -267,6 +267,18 @@
         -webkit-mask: var(--mask);
         mask: var(--mask);
 
+        background: -moz-linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -moz-linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        background: -webkit-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -webkit-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        background: -webkit-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -webkit-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        background: -webkit-linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -webkit-linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        background: -o-linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -o-linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
+        background: -ms-linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
+            -ms-linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
         background: linear-gradient(to top, #1ea3a6, #2a2d4c) 100% 0/50%,
             linear-gradient(#1ea3a6 50%, transparent 95%) 0 0/50% 100% no-repeat;
         animation: spin 1s linear infinite;
